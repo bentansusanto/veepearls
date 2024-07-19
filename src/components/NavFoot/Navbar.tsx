@@ -32,11 +32,13 @@ const Navbar = () => {
         // Mobile
         <div className="relative">
           <div className="flex items-center justify-between px-5 py-3">
-            <Image
-              src={image.LogoVeepearl}
-              alt="logo-veepearl"
-              className="w-16"
-            />
+            <Link href={'/'}>
+              <Image
+                src={image.LogoVeepearl}
+                alt="logo-veepearl"
+                className="w-16"
+              />
+            </Link>
             {/* search, bahasa, add to cart, wishlist, authentication */}
             <div className="flex items-center space-x-5 py-4 text-white">
               {/* search */}
@@ -114,7 +116,7 @@ const Navbar = () => {
                   <h1 className="cursor-pointer">{list.pages}</h1>
                 </HoverCard.Trigger>
                 <HoverCard.Content size="1" className="p-5 shadow">
-                  <ul className="space-y-3 text-white">
+                  <ul className="space-y-3 text-black">
                     {list.subMenu.map((data, idx) => (
                       <li key={idx} className={`list-none font-lato`}>
                         <Link href={data.link}>{data.name_menu}</Link>
@@ -126,11 +128,13 @@ const Navbar = () => {
             ))}
           </div>
           {/* logo */}
-          <Image
-            src={image.LogoVeepearl}
-            alt="logo-veepearl"
-            className="md:w-16 lg:w-20"
-          />
+          <Link href={'/'}>
+            <Image
+              src={image.LogoVeepearl}
+              alt="logo-veepearl"
+              className="md:w-16 lg:w-20"
+            />
+          </Link>
           {/* search, bahasa, add to cart, wishlist, authentication */}
           <div className="flex items-center space-x-8 text-white">
             {/* search */}

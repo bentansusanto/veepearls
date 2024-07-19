@@ -7,10 +7,6 @@ body {
   background: black;
 }
 
-.shadow{
-  @apply bg-[#1d1d1d] shadow-md
-}
-
 .bg-herosection {
   background: url("../assets/images/bg-herosection-veepearl.png");
   background-size: cover;
