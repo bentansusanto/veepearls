@@ -12,7 +12,7 @@ const CheckoutPage = () => {
 
   const calculateSubtotal = () => {
     const storedCart = JSON.parse(localStorage.getItem('cart') || '[]');
-    return storedCart.reduce((acc: number, item: ProductJewerly) => acc + item?.totalPrice as any, 0);
+    return storedCart.reduce((acc: number, item: ProductJewerly) => acc + item.totalPrice, 0);
   };
   const subTotal = calculateSubtotal()
   const total = subTotal + 10 + 10

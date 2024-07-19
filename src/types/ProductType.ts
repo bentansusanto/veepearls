@@ -4,7 +4,7 @@ export type JewerlyType = {
 }
 
 export type ProductJewerly = {
-    totalPrice?: number;
+    totalPrice?: any;
     name_product: string;
     name_type: string,
     image: string;
