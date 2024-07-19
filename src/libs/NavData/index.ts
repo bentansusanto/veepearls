@@ -47,19 +47,19 @@ export const navData:NavProps[] = [
         subMenu: [
             {
                 name_menu: "Anniversaries",
-                link: "/"
+                link: "/occasions/anniversaries"
             },
             {
                 name_menu: "Birthdays",
-                link: "/"
+                link: "/occasions/birthdays"
             },
             {
                 name_menu: "Holidays",
-                link: "/"
+                link: "/occasions/holidays"
             },
             {
                 name_menu: "Weddings",
-                link: "/"
+                link: "/occasions/weddings"
             },
         ]
     },

@@ -27,7 +27,7 @@ const BestProduct = () => {
           nesciunt vero voluptas provident cum animi!
         </p>
       </div>
-      <div className="mt-10 grid grid-cols-2 gap-x-5 gap-y-8 md:grid-cols-4 md:gap-5">
+      <div className="mt-10 grid grid-cols-2 gap-x-5 gap-y-8 lg:grid-cols-4 md:grid-cols-3 md:gap-5">
         {productJewerly.map((list, idx) => (
           <div key={idx} className="space-y-4">
             <div className="relative">

@@ -56,5 +56,17 @@ export const productJewerly:ProductJewerly[] = [
         rating: 4.5,
         image: "bg-product-1.png"
     },
+    {
+        name_product: "White Freshwater Pearl Necklare",
+        price: 200,
+        rating: 4.5,
+        image: "bg-product-1.png"
+    },
+    {
+        name_product: "White Freshwater Pearl Necklare",
+        price: 200,
+        rating: 4.5,
+        image: "bg-product-1.png"
+    },
     
 ]
