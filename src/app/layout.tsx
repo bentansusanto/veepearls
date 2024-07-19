@@ -25,7 +25,7 @@ export default function RootLayout({
         />
       </head>
       <body>
-        <Theme>
+        <Theme style={{ background: "#212121" }}>
           <main className="font-lato">{children}</main>
         </Theme>
       </body>
