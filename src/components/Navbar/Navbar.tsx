@@ -114,7 +114,7 @@ const Navbar = () => {
                   <h1 className="cursor-pointer">{list.pages}</h1>
                 </HoverCard.Trigger>
                 <HoverCard.Content size="1" className="p-5 shadow">
-                  <ul className="space-y-3 text-white">
+                  <ul className="space-y-3 text-black">
                     {list.subMenu.map((data, idx) => (
                       <li key={idx} className={`list-none font-lato`}>
                         <Link href={data.link}>{data.name_menu}</Link>
