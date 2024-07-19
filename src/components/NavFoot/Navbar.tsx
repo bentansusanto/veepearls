@@ -4,7 +4,7 @@ import { navData } from "@/libs/NavData";
 import { HoverCard } from "@radix-ui/themes";
 import Link from "next/link";
 import React, { useState } from "react";
-import "../../app/globals.css";
+import "@/app/globals.css";
 import Image from "next/image";
 import image from "@/libs/ImageData/ImageData";
 import { FiSearch } from "react-icons/fi";
@@ -32,13 +32,11 @@ const Navbar = () => {
         // Mobile
         <div className="relative">
           <div className="flex items-center justify-between px-5 py-3">
-            <Link href={'/'}>
-              <Image
-                src={image.LogoVeepearl}
-                alt="logo-veepearl"
-                className="w-16"
-              />
-            </Link>
+            <Image
+              src={image.LogoVeepearl}
+              alt="logo-veepearl"
+              className="w-16"
+            />
             {/* search, bahasa, add to cart, wishlist, authentication */}
             <div className="flex items-center space-x-5 py-4 text-white">
               {/* search */}
@@ -106,7 +104,7 @@ const Navbar = () => {
           </div>
         </div>
       ) : (
-        // Desktop & Mobile
+        // Desktop & Tablet
         <div className="flex items-center justify-between">
           {/* dropdown menu */}
           <div className="flex items-center space-x-6 lg:space-x-10 text-gray-200">
@@ -115,7 +113,7 @@ const Navbar = () => {
                 <HoverCard.Trigger>
                   <h1 className="cursor-pointer">{list.pages}</h1>
                 </HoverCard.Trigger>
-                <HoverCard.Content size="1" className="p-5 shadow bg-[#1d1d1d]">
+                <HoverCard.Content size="1" className="p-5 shadow">
                   <ul className="space-y-3 text-white">
                     {list.subMenu.map((data, idx) => (
                       <li key={idx} className={`list-none font-lato`}>
@@ -128,13 +126,11 @@ const Navbar = () => {
             ))}
           </div>
           {/* logo */}
-          <Link href={'/'}>
           <Image
             src={image.LogoVeepearl}
             alt="logo-veepearl"
             className="md:w-16 lg:w-20"
           />
-          </Link>
           {/* search, bahasa, add to cart, wishlist, authentication */}
           <div className="flex items-center space-x-8 text-white">
             {/* search */}
