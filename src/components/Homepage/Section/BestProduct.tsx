@@ -112,7 +112,7 @@ const BestProduct = () => {
                         />
                       </div>
                     </AlertDialog.Trigger>
-                    <AlertDialog.Content maxWidth={'500px'} className="relative xl:max-w-5xl lg:max-w-4xl md:max-w-3xl">
+                    <AlertDialog.Content maxWidth="600px" className="relative xl:max-w-5xl lg:max-w-4xl md:max-w-3xl">
                       <div className="flex md:flex-row flex-col gap-10 p-3">
                         <div className="xl:max-w-lg">
                           {detailProduct?.image !== undefined && (
