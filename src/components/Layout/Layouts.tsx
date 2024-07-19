@@ -1,11 +1,14 @@
-import Navbar from '@/components/Navbar'
+'use client'
+import Navbar from '@/components/NavFoot/Navbar'
 import React, { ReactNode } from 'react'
+import Footer from '@/components/NavFoot/Footer'
 
 const Layouts = ({children} : {children: ReactNode}) => {
   return (
-    <div>
+    <div className=''>
         <Navbar/>
         <main>{children}</main>
+        <Footer/>
     </div>
   )
 }

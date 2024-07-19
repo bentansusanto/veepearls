@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import "./globals.css";
 import "@radix-ui/themes/styles.css";
 import { Theme } from "@radix-ui/themes";
-import { lato } from "@/config/FontFamily";
 
 export const metadata: Metadata = {
   title: "Veepearls",
@@ -17,9 +16,17 @@ export default function RootLayout({
 }>) {
   return (
     <html>
+      <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+          rel="stylesheet"
+        />
+      </head>
       <body>
-        <Theme>
-          <main className={lato.className}>{children}</main>
+        <Theme style={{ background: "#212121" }}>
+          <main className="font-lato">{children}</main>
         </Theme>
       </body>
     </html>

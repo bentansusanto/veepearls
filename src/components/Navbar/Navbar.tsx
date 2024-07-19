@@ -1,7 +1,7 @@
 "use client";
 import { Mobile } from "@/config/MediaQuery";
 import { navData } from "@/libs/NavData";
-import { DropdownMenu, HoverCard } from "@radix-ui/themes";
+import { HoverCard } from "@radix-ui/themes";
 import Link from "next/link";
 import React, { useState } from "react";
 import "../../app/globals.css";
@@ -11,7 +11,7 @@ import { FiSearch } from "react-icons/fi";
 import { IoBagOutline, IoClose } from "react-icons/io5";
 import { FaRegHeart } from "react-icons/fa6";
 import { HiOutlineMenu } from "react-icons/hi";
-import { heading } from "@/config/FontFamily";
+
 
 const Navbar = () => {
   const { isMobile } = Mobile();
@@ -27,7 +27,7 @@ const Navbar = () => {
   };
 
   return (
-    <div className={` ${!isMobile && "py-4 md:px-8 lg:px-28"}`}>
+    <div className={` ${!isMobile && "py-4 md:px-8 lg:px-40"}`}>
       {isMobile ? (
         // Mobile
         <div className="relative">
@@ -38,7 +38,7 @@ const Navbar = () => {
               className="w-16"
             />
             {/* search, bahasa, add to cart, wishlist, authentication */}
-            <div className="flex items-center space-x-5 py-4">
+            <div className="flex items-center space-x-5 py-4 text-white">
               {/* search */}
               <div>
                 <FiSearch className="text-xl" />
@@ -67,14 +67,14 @@ const Navbar = () => {
             </div>
           </div>
           <div
-            className={`${open ? "top-20" : "-top-52 opacity-10"} absolute h-auto w-screen bg-gray-50 p-5 shadow-md shadow-gray-100 transition-all duration-500`}
+            className={`${open ? "top-20" : "-top-52 opacity-10"} absolute h-auto w-screen bg-[#202020] p-5 shadow-md shadow-gray-800 text-white transition-all duration-500`}
           >
             {/* Menu */}
             <div className="space-y-5">
               {navData.map((list, idx) => (
                 <div key={idx}>
                   <p
-                    className={`font-semibold ${heading.className}`}
+                    className={`font-semibold font-heading`}
                     onClick={() => handleSelectMenu(list.pages)}
                   >
                     {list.pages}
@@ -84,7 +84,7 @@ const Navbar = () => {
                       {list.subMenu.map((data, idx) => (
                         <li
                           key={idx}
-                          className={`${heading.className} text-gray-500`}
+                          className={`font-heading text-gray-300`}
                         >
                           <Link
                             href={data.link}
@@ -107,16 +107,16 @@ const Navbar = () => {
         // Desktop & Mobile
         <div className="flex items-center justify-between">
           {/* dropdown menu */}
-          <div className="flex items-center space-x-6 lg:space-x-10">
+          <div className="flex items-center space-x-6 lg:space-x-10 text-gray-200">
             {navData.map((list, idx) => (
               <HoverCard.Root key={idx}>
                 <HoverCard.Trigger>
                   <h1 className="cursor-pointer">{list.pages}</h1>
                 </HoverCard.Trigger>
-                <HoverCard.Content size="1" className="p-3 shadow">
-                  <ul className="space-y-3">
+                <HoverCard.Content size="1" className="p-5 shadow bg-[#1d1d1d]">
+                  <ul className="space-y-3 text-white">
                     {list.subMenu.map((data, idx) => (
-                      <li key={idx} className="list-none">
+                      <li key={idx} className={`list-none font-lato`}>
                         <Link href={data.link}>{data.name_menu}</Link>
                       </li>
                     ))}
@@ -129,10 +129,10 @@ const Navbar = () => {
           <Image
             src={image.LogoVeepearl}
             alt="logo-veepearl"
-            className="md:w-16 lg:w-auto"
+            className="md:w-16 lg:w-20"
           />
           {/* search, bahasa, add to cart, wishlist, authentication */}
-          <div className="flex items-center space-x-8">
+          <div className="flex items-center space-x-8 text-white">
             {/* search */}
             <div>
               <FiSearch className="text-xl" />
