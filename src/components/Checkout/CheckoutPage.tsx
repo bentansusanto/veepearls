@@ -18,19 +18,21 @@ const CheckoutPage = () => {
   const total = subTotal + 10 + 10
 
   useEffect(() => {
-    const storedCart = JSON.parse(localStorage.getItem('cart') || '[]');
-    setCart(storedCart);
-
-    const updateCart = () => {
-      const newCart = JSON.parse(localStorage.getItem('cart') || '[]');
-      setCart(newCart);
-    };
-
-    emitter.on('cartUpdated', updateCart);
-
-    return () => {
-      emitter.off('cartUpdated', updateCart);
-    };
+    if(typeof window !== 'undefined'){
+      const storedCart = JSON.parse(localStorage.getItem('cart') || '[]');
+      setCart(storedCart);
+  
+      const updateCart = () => {
+        const newCart = JSON.parse(localStorage.getItem('cart') || '[]');
+        setCart(newCart);
+      };
+  
+      emitter.on('cartUpdated', updateCart);
+  
+      return () => {
+        emitter.off('cartUpdated', updateCart);
+      };
+    }
   }, []);
 
   const handleRemoveFromCart = (name_product: string) => {
