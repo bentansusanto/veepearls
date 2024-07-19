@@ -49,7 +49,7 @@ export const productJewerly:ProductJewerly[] = [
         desc: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Facilis quibusdam perspiciatis aliquid deleniti et, tempora labore eum quo ipsum. Aperiam."
     },
     {
-        name_product: "White Freshwater Pearl Necklare",
+        name_product: "White Freshwater Pearl Necklares",
         name_type: "Set of Jewerly",
         price: 200,
         rating: 4.5,
@@ -73,7 +73,7 @@ export const productJewerly:ProductJewerly[] = [
         desc: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Facilis quibusdam perspiciatis aliquid deleniti et, tempora labore eum quo ipsum. Aperiam."
     },
     {
-        name_product: "White Freshwater Pearl Necklare",
+        name_product: "White Freshwater Pearl Necklares",
         name_type: "Set of Jewerly",
         price: 200,
         rating: 4.5,

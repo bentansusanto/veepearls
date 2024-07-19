@@ -7,6 +7,12 @@ body {
   background: black;
 }
 
+input, button, textarea{
+  outline: none;
+}
+
+
+
 .bg-herosection {
   background: url("../assets/images/bg-herosection-veepearl.png");
   background-size: cover;

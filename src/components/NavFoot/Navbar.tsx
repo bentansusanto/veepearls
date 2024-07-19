@@ -3,7 +3,7 @@ import { Mobile } from "@/config/MediaQuery";
 import { navData } from "@/libs/NavData";
 import { HoverCard } from "@radix-ui/themes";
 import Link from "next/link";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "@/app/globals.css";
 import Image from "next/image";
 import image from "@/libs/ImageData/ImageData";
@@ -11,13 +11,32 @@ import { FiSearch } from "react-icons/fi";
 import { IoBagOutline, IoClose } from "react-icons/io5";
 import { FaRegHeart } from "react-icons/fa6";
 import { HiOutlineMenu } from "react-icons/hi";
+import emitter from "@/config/EmitterEvent";
+
 
 
 const Navbar = () => {
   const { isMobile } = Mobile();
   const [open, setOpen] = useState<boolean>(false);
   const [selectMenu, setSelectMenu] = useState({});
+  const [ cartCount, setCartCount ] = useState<number>(0);
   const [openSubMenu, setOpenSubMenu] = useState<boolean>(false);
+
+  useEffect(() => {
+    const updateCartCount = () => {
+      const cart = JSON.parse(localStorage.getItem('cart') || '[]');
+      setCartCount(cart.length);
+    };
+
+    updateCartCount();
+
+    emitter.on('cartUpdated', updateCartCount);
+
+    return () => {
+      emitter.off('cartUpdated', updateCartCount);
+    };
+  }, []);
+
   const handleSelectMenu = (pages: string) => {
     setSelectMenu(pages);
     setOpenSubMenu(!openSubMenu);
@@ -142,8 +161,14 @@ const Navbar = () => {
               <FiSearch className="text-xl" />
             </div>
             {/* add to cart */}
-            <div>
-              <IoBagOutline className="text-xl" />
+            <div className="relative">
+              <Link href={'/checkout'}>
+                <IoBagOutline className="text-xl" />
+              </Link>
+              {
+                cartCount > 0 && 
+                 <div className="bg-red-500 w-3 h-3 rounded-full absolute top-0 right-0 text-xs"/>
+              }
             </div>
             {/* add to wishlist */}
             <div>

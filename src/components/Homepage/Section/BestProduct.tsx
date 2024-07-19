@@ -1,27 +1,28 @@
 import { dollar } from "@/config/Currency";
+import emitter from "@/config/EmitterEvent";
 import { Mobile } from "@/config/MediaQuery";
 import { jewerlyType, productJewerly } from "@/libs/ProductData/ProductData";
 import { ProductJewerly } from "@/types/ProductType";
 import { AlertDialog } from "@radix-ui/themes";
 import Image from "next/image";
-// import Link from "next/link";
 import React, { useState } from "react";
 import { FaStar } from "react-icons/fa";
 import { FiSearch } from "react-icons/fi";
 import { IoClose } from "react-icons/io5";
-// import { IoClose } from "react-icons/io5";
 import { LuMinus, LuPlus } from "react-icons/lu";
-// import { IoBagOutline } from "react-icons/io5";
+
 
 const BestProduct = () => {
   const { isMobile } = Mobile();
   const [detailProduct, setDetailProduct] = useState<ProductJewerly | null>(
     null,
   );
+  const [quantity, setQuantity] = useState<number>(1);
   const [selectProduct, setSelectProduct] = useState({});
   const [selectType, setSelectType] = useState("");
   const [openSelect, setOpenSelect] = useState(false);
   const [openModal, setOpenModal] = useState(false);
+
   const [selectInfo, setSelectInfo] = useState("Product Information");
   const detailInfo = [
     {
@@ -35,6 +36,32 @@ const BestProduct = () => {
   const filteredProducts = selectType
     ? productJewerly.filter((product) => product.name_type === selectType)
     : productJewerly;
+
+    const handleAddToCart = () => {
+      const cart = JSON.parse(localStorage.getItem('cart') || '[]');
+      const existingItem = cart.find((item: ProductJewerly) => item.name_product === detailProduct?.name_product);
+      if (existingItem) {
+        existingItem.quantity += quantity;
+        existingItem.totalPrice += detailProduct?.price as number * quantity;
+      } else {
+        cart.push({...detailProduct, quantity, totalPrice: detailProduct?.price as number * quantity });
+      }
+      localStorage.setItem('cart', JSON.stringify(cart));
+      emitter.emit('cartUpdated', cart.length);
+
+    }; 
+
+    const totalPrice = detailProduct?.price as number * quantity;
+
+    const handleQuantityChange = (type: 'increment' | 'decrement') => {
+      setQuantity((prevQuantity) => {
+        if (type === 'increment') {
+          return prevQuantity + 1;
+        } else {
+          return prevQuantity > 1 ? prevQuantity - 1 : 1;
+        }
+      });
+    };  
 
   const handleOpenModal = (list: ProductJewerly) => {
     setDetailProduct(list);
@@ -141,17 +168,20 @@ const BestProduct = () => {
                               </p>
                             </div>
                           </div>
+                          {/* increment & decrement product quantity */}
                           <div className="mt-8 flex max-w-40 items-center justify-center space-x-10 rounded-md border border-gray-300 p-3">
-                            <LuMinus className="text-xl" />
-                            <p>1</p>
-                            <LuPlus className="text-xl" />
+                            <LuMinus onClick={() => handleQuantityChange('decrement')} className="text-xl" />
+                            <p>{quantity}</p>
+                            <LuPlus onClick={() => handleQuantityChange('increment')} className="text-xl" />
                           </div>
                           {/* price & button add to cart */}
                           <div className="mt-3 flex items-center justify-between border border-gray-300 p-3 xl:max-w-64">
                             <p className="text-lg font-bold">
-                              {dollar(detailProduct?.price as number)}
+                              {dollar(totalPrice)}
                             </p>
-                            <p className="text-lg font-semibold">Add To Cart</p>
+                            <AlertDialog.Action>
+                               <p onClick={handleAddToCart} className="text-lg cursor-pointer font-semibold">Add To Cart</p>
+                            </AlertDialog.Action>
                           </div>
 
                           {/* Information Products */}
