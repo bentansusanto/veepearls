@@ -76,7 +76,7 @@ const Footer = () => {
         </div>
         <div className="space-y-5">
           {/* Form Subscribe */}
-          <div className="flex items-center justify-between rounded-md bg-[#2626265e] bg-gray-500 text-white backdrop-blur-md">
+          <div className="flex items-center justify-between rounded-md bg-[#2626265e] text-white backdrop-blur-md">
             <input
               type="email"
               placeholder="Enter your email"

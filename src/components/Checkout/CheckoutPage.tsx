@@ -1,14 +1,37 @@
 "use client";
 import { dollar } from "@/config/Currency";
 import emitter from "@/config/EmitterEvent";
+import { greetingMessage } from "@/config/GreetingMessage";
 import { Mobile } from "@/config/MediaQuery";
 import { ProductJewerly } from "@/types/ProductType";
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
 
+const initialValue = {
+  name: "",
+  phoneNumber: "",
+  email: "",
+  address: "",
+  city: "",
+  country: "",
+};
+
 const CheckoutPage = () => {
   const { isMobile } = Mobile();
   const [cart, setCart] = useState<ProductJewerly[]>([]);
+  const [form, setForm] = useState(initialValue || "");
+  const shipping:number = 10
+  const tax:number = 10
+  const waLink = "https://wa.me";
+  const numberWA = "+905365829313";
+  const greetingData = greetingMessage();
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = e.target;
+    setForm({
+      ...form,
+      [name]: value,
+    });
+  };
 
   const calculateSubtotal = () => {
     if (typeof window !== "undefined") {
@@ -20,7 +43,37 @@ const CheckoutPage = () => {
     }
   };
   const subTotal = calculateSubtotal();
-  const total = subTotal + 10 + 10;
+  const total = subTotal + shipping + tax;
+
+  const handleSendMessage = (
+    e: React.FormEvent<HTMLInputElement | HTMLParagraphElement>,
+  ) => {
+    e.preventDefault();
+    const message = `
+${greetingData} veepearls, i want to buy pearls jewerly.
+*Order Details:*
+Name: ${form.name}
+Phone Number: ${form.phoneNumber}
+Email: ${form.email}
+Address: ${form.address}
+City: ${form.city}
+Country: ${form.country}
+
+*Order Summary:*
+${cart.map((item) => `Product: ${item.name_product}, Quantity: ${item.quantity}, SubTotal Price: ${dollar(item.totalPrice)}`).join("\n")}
+
+Shipping: ${dollar(shipping)}
+Tax: ${dollar(tax)}
+
+Total: ${dollar(total.toFixed(2))}
+`;
+
+    const whatsappLink = `${waLink}/${numberWA}?text=${encodeURIComponent(
+      message,
+    )}`;
+    window.open(whatsappLink, "_blank");
+    setForm(initialValue);
+  };
 
   useEffect(() => {
     if (typeof window !== "undefined") {
@@ -54,6 +107,9 @@ const CheckoutPage = () => {
         <div className="mt-5 flex flex-col gap-10 md:flex-row md:space-x-5 lg:space-x-10 xl:space-x-20">
           {/* Cart */}
           <div className={`w-full space-y-5 text-white`}>
+            {cart.length === 0 && (
+              <p className="text-gray-500">your cart is empty</p>
+            )}
             <div
               className={`space-y-5 ${isMobile && "h-[70vh] overflow-y-scroll"}`}
             >
@@ -106,6 +162,9 @@ const CheckoutPage = () => {
                 <div className="mb-3 bg-[#252525]">
                   <input
                     type="text"
+                    name="name"
+                    value={form.name}
+                    onChange={handleChange}
                     placeholder="Enter your name"
                     className="w-full bg-transparent px-3 py-4 placeholder:text-gray-500"
                   />
@@ -115,6 +174,9 @@ const CheckoutPage = () => {
                   <div className="mb-3 w-full bg-[#252525]">
                     <input
                       type="text"
+                      name="phoneNumber"
+                      value={form.phoneNumber}
+                      onChange={handleChange}
                       placeholder="Enter phone number"
                       className="w-full bg-transparent px-3 py-4 placeholder:text-gray-500"
                     />
@@ -122,6 +184,9 @@ const CheckoutPage = () => {
                   <div className="mb-3 w-full bg-[#252525]">
                     <input
                       type="email"
+                      name="email"
+                      value={form.email}
+                      onChange={handleChange}
                       placeholder="Enter your email"
                       className="w-full bg-transparent px-3 py-4 placeholder:text-gray-500"
                     />
@@ -129,7 +194,11 @@ const CheckoutPage = () => {
                 </div>
                 {/* address */}
                 <div className="mb-3 bg-[#252525]">
-                  <textarea
+                  <input
+                    type="text"
+                    name="address"
+                    value={form.address}
+                    onChange={handleChange}
                     placeholder="Enter your address"
                     className="w-full bg-transparent px-3 py-4 placeholder:text-gray-500"
                   />
@@ -139,13 +208,19 @@ const CheckoutPage = () => {
                   <div className="mb-3 w-full bg-[#252525]">
                     <input
                       type="text"
-                      placeholder="Enter phone city"
+                      name="city"
+                      value={form.city}
+                      onChange={handleChange}
+                      placeholder="Enter city"
                       className="w-full bg-transparent px-3 py-4 placeholder:text-gray-500"
                     />
                   </div>
                   <div className="mb-3 w-full bg-[#252525]">
                     <input
-                      type="email"
+                      type="text"
+                      name="country"
+                      value={form.country}
+                      onChange={handleChange}
                       placeholder="Enter your country"
                       className="w-full bg-transparent px-3 py-4 placeholder:text-gray-500"
                     />
@@ -163,12 +238,12 @@ const CheckoutPage = () => {
                     {/* shipping price */}
                     <div className="flex items-center justify-between">
                       <p className="text-sm text-gray-500">Shipping</p>
-                      <p className="text-gray-300">$10</p>
+                      <p className="text-gray-300">{dollar(shipping)}</p>
                     </div>
                     {/* shipping price */}
                     <div className="flex items-center justify-between">
                       <p className="text-sm text-gray-500">Tax</p>
-                      <p className="text-gray-300">$10</p>
+                      <p className="text-gray-300">{dollar(tax)}</p>
                     </div>
                     <div className="my-3 h-[1px] w-full bg-gray-500" />
                     <div className="flex items-center justify-between">
@@ -183,7 +258,7 @@ const CheckoutPage = () => {
                 <button
                   className={`w-full rounded-md border-2 border-[#B2A671] bg-[#B2A671] px-5 py-2.5 text-center font-semibold text-white transition-all duration-300 hover:bg-[#B2A671] hover:text-white`}
                 >
-                  Shop Now
+                  <p onClick={handleSendMessage}>Checkout Now</p>
                 </button>
               </form>
             </div>
