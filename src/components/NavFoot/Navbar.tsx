@@ -65,8 +65,14 @@ const Navbar = () => {
                 <FiSearch className="text-xl" />
               </div>
               {/* add to cart */}
-              <div>
+              <div className="relative">
+              <Link href={'/checkout'}>
                 <IoBagOutline className="text-xl" />
+              </Link>
+                {
+                cartCount > 0 && 
+                 <div className="bg-red-500 w-3 h-3 rounded-full absolute top-0 right-0 text-xs"/>
+              }
               </div>
               {/* add to wishlist */}
               <div>

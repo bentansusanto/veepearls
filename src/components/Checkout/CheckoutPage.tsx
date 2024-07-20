@@ -3,11 +3,12 @@ import { dollar } from "@/config/Currency";
 import emitter from "@/config/EmitterEvent";
 import { greetingMessage } from "@/config/GreetingMessage";
 import { Mobile } from "@/config/MediaQuery";
+import { DataPerson } from "@/types/CheckoutType";
 import { ProductJewerly } from "@/types/ProductType";
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
 
-const initialValue = {
+const initialValue:DataPerson = {
   name: "",
   phoneNumber: "",
   email: "",
@@ -24,6 +25,7 @@ const CheckoutPage = () => {
   const tax:number = 10
   const waLink = "https://wa.me";
   const numberWA = "+905365829313";
+  // const numberWADev = "+6288277450792";
   const greetingData = greetingMessage();
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
@@ -51,6 +53,7 @@ const CheckoutPage = () => {
     e.preventDefault();
     const message = `
 ${greetingData} veepearls, i want to buy pearls jewerly.
+
 *Order Details:*
 Name: ${form.name}
 Phone Number: ${form.phoneNumber}
@@ -60,12 +63,16 @@ City: ${form.city}
 Country: ${form.country}
 
 *Order Summary:*
-${cart.map((item) => `Product: ${item.name_product}, Quantity: ${item.quantity}, SubTotal Price: ${dollar(item.totalPrice)}`).join("\n")}
+${cart.map((item) => `
+  Product: *${item.name_product}*, 
+  Quantity: *${item.quantity}*, 
+  SubTotal Price: *${dollar(item.totalPrice)}*`).join("\n")}
 
-Shipping: ${dollar(shipping)}
-Tax: ${dollar(tax)}
-
-Total: ${dollar(total.toFixed(2))}
+  -----------------------------------------------------------------------
+  Shipping: ${dollar(shipping)}
+  Tax: ${dollar(tax)}
+ 
+  Total Price: *${dollar(total.toFixed(2))}*
 `;
 
     const whatsappLink = `${waLink}/${numberWA}?text=${encodeURIComponent(

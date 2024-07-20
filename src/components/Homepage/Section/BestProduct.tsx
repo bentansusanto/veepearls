@@ -5,7 +5,7 @@ import { jewerlyType, productJewerly } from "@/libs/ProductData/ProductData";
 import { ProductJewerly } from "@/types/ProductType";
 import { AlertDialog } from "@radix-ui/themes";
 import Image from "next/image";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { FaStar } from "react-icons/fa";
 import { FiSearch } from "react-icons/fi";
 import { IoClose } from "react-icons/io5";
@@ -21,7 +21,6 @@ const BestProduct = () => {
   const [selectProduct, setSelectProduct] = useState({});
   const [selectType, setSelectType] = useState("");
   const [openSelect, setOpenSelect] = useState(false);
-  const [openModal, setOpenModal] = useState(false);
 
   const [selectInfo, setSelectInfo] = useState("Product Information");
   const detailInfo = [
@@ -51,6 +50,13 @@ const BestProduct = () => {
 
     }; 
 
+    useEffect(() => {
+      if (detailProduct) {
+        setQuantity(1); // Reset quantity when modal opens
+      }
+    }, [detailProduct]);
+  
+
     const totalPrice = detailProduct?.price as number * quantity;
 
     const handleQuantityChange = (type: 'increment' | 'decrement') => {
@@ -65,7 +71,6 @@ const BestProduct = () => {
 
   const handleOpenModal = (list: ProductJewerly) => {
     setDetailProduct(list);
-    setOpenModal(true);
   };
 
   const handleSelectInfo = (name_menu: string) => {
