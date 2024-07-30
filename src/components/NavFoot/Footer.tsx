@@ -13,7 +13,7 @@ const Footer = () => {
     >
             {/* Menu Occasion, Pearl Education, AboutUs, Customer Support */}
             <div className=" text-white md:p-8 p-5 bg-black xl:pl-28 lg:pl-10 md:w-[100%]">
-                <div className="flex flex-wrap xl:gap-20 lg:gap-14 md:gap-10 gap-10">
+                <div className="flex flex-wrap gap-10 xl:gap-20 lg:gap-14 md:gap-10">
                     {/* Occasion */}
                     <div className="space-y-5">
                     <p className="text-lg font-bold">Occasions</p>
@@ -59,7 +59,7 @@ const Footer = () => {
                     </ul>
                     </div>
                 </div>
-                <footer className="text-gray-400 mt-20">
+                <footer className="mt-20 text-gray-400">
                     ©{date}, Veepearls | All Right Reserved
                 </footer>
             </div>
@@ -80,10 +80,10 @@ const Footer = () => {
             <input
               type="email"
               placeholder="Enter your email"
-              className="border-[#454545] bg-transparent px-3 outline-none"
+              className="border-[#454545] placeholder:text-gray-300 bg-transparent px-3 outline-none"
             />
             <button
-              className={`rounded-md border-2 border-[#B2A671] bg-[#B2A671] px-5 py-3.5 text-center font-heading text-white transition-all duration-300 hover:bg-[#B2A671] hover:text-white`}
+              className={`rounded-md border-2 border-[#B2A671] bg-[#B2A671] px-5 py-3.5 text-center font-lato font-semibold text-white transition-all duration-300 hover:bg-[#B2A671] hover:text-white`}
             >
               Subscibe
             </button>

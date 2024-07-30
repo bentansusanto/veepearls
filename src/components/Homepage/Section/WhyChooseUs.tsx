@@ -23,7 +23,7 @@ const WhyChooseUs = () => {
                         <Image src={require(`@/assets/icon/${list.icon}`)} alt={list.icon}/>
                         <div className='space-y-2 text-white'>
                             <h2 className='text-lg font-heading'>{list.name_service}</h2>
-                            <p className='text-gray-300'>{list.desc}</p>
+                            <p className='text-gray-400'>{list.desc}</p>
                         </div>
                     </div>
                 ))

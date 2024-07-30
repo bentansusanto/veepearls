@@ -8,7 +8,7 @@ const HeroSection = () => {
     <div
       className={`${isMobile ? "-mt-24 flex-col-reverse px-5 pb-32 pt-52" : "-mt-40 flex-row space-x-10 pb-52 pt-72 md:px-8 lg:justify-between lg:px-28"} bg-herosection flex items-center`}
     >
-      <div className="mx-auto mt-5 lg:w-[50%] xl:w-[40%]">
+      <div className="mt-5 lg:w-[50%] xl:w-[40%]">
         <div className="space-y-3 text-center text-white">
           <h2 className="text-lg font-bold">Let’s Shop</h2>
           <h1
@@ -17,19 +17,16 @@ const HeroSection = () => {
           >
             Be Your Own Kind Of Beautiful
           </h1>
-          <p className="text-sm text-gray-300">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt aliqua.
+          <p className="text-[15px] lg:max-w-lg mx-auto text-gray-300">
+          Our meticulously curated collection of pearls promises to bring a touch of sophistication and grace to your every moment.
           </p>
         </div>
         <div className="mx-auto my-8 h-[3px] w-20 bg-white" />
         <div className="text-center">
           <button
-            className={`font-heading hover:bg-[#B2A671] hover:text-white transition-all duration-300 rounded-md border-2 border-[#B2A671] px-5 py-2.5 text-center text-[#B2A671]`}
+            className={`rounded-md border-2 bg-[#B2A671] border-[#B2A671] px-5 py-2.5 text-center font-lato text-white transition-all duration-300 hover:bg-[#B2A671] hover:text-white`}
           >
-            <Link href={'#products'}>
-              Shop Now
-            </Link>
+            <Link href={"#products"}>Shop Now</Link>
           </button>
         </div>
       </div>

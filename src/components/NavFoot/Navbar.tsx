@@ -1,7 +1,7 @@
 "use client";
 import { Mobile } from "@/config/MediaQuery";
 import { navData } from "@/libs/NavData";
-import { HoverCard } from "@radix-ui/themes";
+import { DropdownMenu, HoverCard } from "@radix-ui/themes";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import "@/app/globals.css";
@@ -12,28 +12,27 @@ import { IoBagOutline, IoClose } from "react-icons/io5";
 import { FaRegHeart } from "react-icons/fa6";
 import { HiOutlineMenu } from "react-icons/hi";
 import emitter from "@/config/EmitterEvent";
-
-
+import {Dropdown} from 'flowbite-react'
 
 const Navbar = () => {
   const { isMobile } = Mobile();
   const [open, setOpen] = useState<boolean>(false);
   const [selectMenu, setSelectMenu] = useState({});
-  const [ cartCount, setCartCount ] = useState<number>(0);
+  const [cartCount, setCartCount] = useState<number>(0);
   const [openSubMenu, setOpenSubMenu] = useState<boolean>(false);
 
   useEffect(() => {
     const updateCartCount = () => {
-      const cart = JSON.parse(localStorage.getItem('cart') || '[]');
+      const cart = JSON.parse(localStorage.getItem("cart") || "[]");
       setCartCount(cart.length);
     };
 
     updateCartCount();
 
-    emitter.on('cartUpdated', updateCartCount);
+    emitter.on("cartUpdated", updateCartCount);
 
     return () => {
-      emitter.off('cartUpdated', updateCartCount);
+      emitter.off("cartUpdated", updateCartCount);
     };
   }, []);
 
@@ -51,7 +50,7 @@ const Navbar = () => {
         // Mobile
         <div className="relative">
           <div className="flex items-center justify-between px-5 py-3">
-            <Link href={'/'}>
+            <Link href={"/"}>
               <Image
                 src={image.LogoVeepearl}
                 alt="logo-veepearl"
@@ -59,20 +58,19 @@ const Navbar = () => {
               />
             </Link>
             {/* search, bahasa, add to cart, wishlist, authentication */}
-            <div className="flex items-center space-x-5 py-4 text-white">
+            <div className="flex items-center py-4 space-x-5 text-white">
               {/* search */}
               <div>
                 <FiSearch className="text-xl" />
               </div>
               {/* add to cart */}
               <div className="relative">
-              <Link href={'/checkout'}>
-                <IoBagOutline className="text-xl" />
-              </Link>
-                {
-                cartCount > 0 && 
-                 <div className="bg-red-500 w-3 h-3 rounded-full absolute top-0 right-0 text-xs"/>
-              }
+                <Link href={"/checkout"}>
+                  <IoBagOutline className="text-xl" />
+                </Link>
+                {cartCount > 0 && (
+                  <div className="absolute top-0 right-0 w-3 h-3 text-xs bg-red-500 rounded-full" />
+                )}
               </div>
               {/* add to wishlist */}
               <div>
@@ -94,25 +92,22 @@ const Navbar = () => {
             </div>
           </div>
           <div
-            className={`${open ? "top-20" : "-top-52 opacity-10"} absolute h-auto w-screen bg-[#202020] p-5 shadow-md shadow-gray-800 text-white transition-all duration-500`}
+            className={`${open ? "top-20" : "-top-52 opacity-10"} absolute h-auto w-screen bg-[#202020] p-5 text-white shadow-md shadow-gray-800 transition-all duration-500`}
           >
             {/* Menu */}
             <div className="space-y-5">
               {navData.map((list, idx) => (
                 <div key={idx}>
                   <p
-                    className={`font-semibold font-heading`}
+                    className={`font-heading font-semibold`}
                     onClick={() => handleSelectMenu(list.pages)}
                   >
                     {list.pages}
                   </p>
                   {openSubMenu && selectMenu === list.pages && (
-                    <ul className="ml-3 mt-5 space-y-5">
+                    <ul className="mt-5 ml-3 space-y-5">
                       {list.subMenu.map((data, idx) => (
-                        <li
-                          key={idx}
-                          className={`font-heading text-gray-300`}
-                        >
+                        <li key={idx} className={`font-heading text-gray-300`}>
                           <Link
                             href={data.link}
                             onClick={() => {
@@ -134,7 +129,7 @@ const Navbar = () => {
         // Desktop & Tablet
         <div className="flex items-center justify-between">
           {/* dropdown menu */}
-          <div className="flex items-center space-x-6 lg:space-x-10 text-gray-200">
+          <div className="flex items-center space-x-6 text-gray-200 lg:space-x-10">
             {navData.map((list, idx) => (
               <HoverCard.Root key={idx}>
                 <HoverCard.Trigger>
@@ -153,7 +148,7 @@ const Navbar = () => {
             ))}
           </div>
           {/* logo */}
-          <Link href={'/'}>
+          <Link href={"/"}>
             <Image
               src={image.LogoVeepearl}
               alt="logo-veepearl"
@@ -168,18 +163,25 @@ const Navbar = () => {
             </div>
             {/* add to cart */}
             <div className="relative">
-              <Link href={'/checkout'}>
+              <Link href={"/checkout"}>
                 <IoBagOutline className="text-xl" />
               </Link>
-              {
-                cartCount > 0 && 
-                 <div className="bg-red-500 w-3 h-3 rounded-full absolute top-0 right-0 text-xs"/>
-              }
+              {cartCount > 0 && (
+                <div className="absolute top-0 right-0 w-3 h-3 text-xs bg-red-500 rounded-full" />
+              )}
             </div>
             {/* add to wishlist */}
             <div>
               <FaRegHeart className="text-xl" />
             </div>
+            {/* <div>
+              <Dropdown label="" className="p-3 bg-black" inline renderTrigger={() => <span>button</span>}>
+                <Dropdown.Item>Dashboard</Dropdown.Item>
+                <Dropdown.Item>Settings</Dropdown.Item>
+                <Dropdown.Item>Earnings</Dropdown.Item>
+                <Dropdown.Item>Sign out</Dropdown.Item>
+              </Dropdown>
+            </div> */}
           </div>
         </div>
       )}

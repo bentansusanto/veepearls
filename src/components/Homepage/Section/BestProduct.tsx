@@ -94,7 +94,7 @@ const BestProduct = () => {
       id="products"
     >
       <div className="mx-auto space-y-3 text-center text-white md:w-[50%] xl:w-[35%]">
-        <h1 className="font-heading text-4xl font-semibold">
+        <h1 className="text-4xl font-semibold font-heading">
           Our Best Products
         </h1>
         <p className="text-gray-300">
@@ -103,12 +103,12 @@ const BestProduct = () => {
         </p>
       </div>
       {/* Type Products */}
-      <div className="mt-10 flex flex-wrap md:justify-center md:gap-5 gap-3">
+      <div className="flex flex-wrap gap-3 mt-10 md:justify-center md:gap-3">
         {jewerlyType.map((list, idx) => (
           <div
             onClick={() => handleSelectType(list.name_type)}
             key={idx}
-            className={` ${selectType === list.name_type ? "border-[#B2A671] bg-[#B2A671] text-white" : "border-gray-500 text-gray-400 transition-all duration-500"} cursor-pointer rounded-md border-2 px-6 py-3`}
+            className={` ${selectType === list.name_type ? "text-[#B2A671]" : "text-gray-400 transition-all duration-500"} cursor-pointer rounded-md px-6 py-3`}
           >
             <p className="font-heading text-[16px] font-semibold">
               {list.name_type}
@@ -117,7 +117,7 @@ const BestProduct = () => {
         ))}
       </div>
       {/* products */}
-      <div className="mt-10 grid grid-cols-2 gap-x-5 gap-y-8 md:grid-cols-3 md:gap-5 lg:grid-cols-4">
+      <div className="grid grid-cols-2 mt-10 gap-x-5 gap-y-8 md:grid-cols-3 md:gap-5 lg:grid-cols-4">
         {filteredProducts.map((list, idx) => (
           <div key={idx} className="space-y-4">
             <div className="relative">
@@ -140,12 +140,12 @@ const BestProduct = () => {
                       <div>
                         <FiSearch
                           onClick={() => handleOpenModal(list)}
-                          className="cursor-pointer text-2xl"
+                          className="text-2xl cursor-pointer"
                         />
                       </div>
                     </AlertDialog.Trigger>
                     <AlertDialog.Content maxWidth="700px" size={'1'} className="relative">
-                      <div className="flex md:flex-row flex-col gap-10 p-3">
+                      <div className="flex flex-col gap-10 p-3 md:flex-row">
                         <div className="xl:max-w-lg">
                           {detailProduct?.image !== undefined && (
                             <Image
@@ -159,11 +159,11 @@ const BestProduct = () => {
                         </div>
                         <div>
                           <div className="space-y-3">
-                            <p className="text-gray-400 text-sm">{detailProduct?.name_type}</p>
-                            <AlertDialog.Title className="font-heading font-semibold lg:text-2xl">
+                            <p className="text-sm text-gray-400">{detailProduct?.name_type}</p>
+                            <AlertDialog.Title className="font-semibold font-heading lg:text-2xl">
                                 {detailProduct?.name_product}
                             </AlertDialog.Title>
-                            <div className="mt-3 flex items-center space-x-2">
+                            <div className="flex items-center mt-3 space-x-2">
                               <FaStar className="text-xl text-[#B2A671]" />
                               <p className="text-[15px]">
                                 {detailProduct?.rating}{" "}
@@ -174,24 +174,24 @@ const BestProduct = () => {
                             </div>
                           </div>
                           {/* increment & decrement product quantity */}
-                          <div className="mt-8 flex max-w-40 items-center justify-center space-x-10 rounded-md border border-gray-300 p-3">
+                          <div className="flex items-center justify-center p-3 mt-8 space-x-10 border border-gray-300 rounded-md max-w-40">
                             <LuMinus onClick={() => handleQuantityChange('decrement')} className="text-xl" />
                             <p>{quantity}</p>
                             <LuPlus onClick={() => handleQuantityChange('increment')} className="text-xl" />
                           </div>
                           {/* price & button add to cart */}
-                          <div className="mt-3 flex items-center justify-between border border-gray-300 p-3 xl:max-w-64">
+                          <div className="flex items-center justify-between p-3 mt-3 border border-gray-300 xl:max-w-64">
                             <p className="text-lg font-bold">
                               {dollar(totalPrice)}
                             </p>
                             <AlertDialog.Action>
-                               <p onClick={handleAddToCart} className="text-lg cursor-pointer font-semibold">Add To Cart</p>
+                               <p onClick={handleAddToCart} className="text-lg font-semibold cursor-pointer">Add To Cart</p>
                             </AlertDialog.Action>
                           </div>
 
                           {/* Information Products */}
                           <div className="mt-5 lg:max-w-md md:max-w-lg">
-                            <div className="flex items-center space-x-5 border-b-2 border-gray-100 py-2">
+                            <div className="flex items-center py-2 space-x-5 border-b-2 border-gray-100">
                               {detailInfo.map((detail, idx) => (
                                 <p
                                   className={`${selectInfo !== detail.name_menu &&  "text-gray-400 font-normal"} cursor-pointer transition-all font-semibold duration-300`}
@@ -202,13 +202,13 @@ const BestProduct = () => {
                                 </p>
                               ))}
                             </div>
-                            <AlertDialog.Description className="text-gray-400 mt-5">
+                            <AlertDialog.Description className="mt-5 text-gray-400">
                               {openDetailInfo}
                             </AlertDialog.Description>
                           </div>
                         </div>
                       </div>
-                      <div className="absolute -right-3 -top-3 rounded-full bg-black p-5 text-white">
+                      <div className="absolute p-5 text-white bg-black rounded-full -right-3 -top-3">
                         <AlertDialog.Cancel>
                           <div>
                             <IoClose className="text-xl" />
@@ -223,7 +223,7 @@ const BestProduct = () => {
               )}
             </div>
             <div className="space-y-3 text-white">
-              <h2 className="font-heading font-semibold lg:text-lg">
+              <h2 className="font-semibold font-heading lg:text-lg">
                 {list.name_product}
               </h2>
               <div className="flex space-x-2">

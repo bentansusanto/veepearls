@@ -1,22 +1,22 @@
 export const ourServices: Services[] = [
   {
     name_service: "Delivery",
-    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    desc: "Fast, reliable shipping worldwide. Receive your pearls quickly and safely.",
     icon: "icon-shipping.svg",
   },
   {
     name_service: "Customer Support",
-    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    desc: "Friendly, expert support to ensure a seamless shopping experience.",
     icon: "icon-customer-care.svg",
   },
   {
     name_service: "Secure Payment",
-    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    desc: "Shop confidently with our state-of-the-art security measures.",
     icon: "icon-secure-payment.svg",
   },
   {
     name_service: "100% Original",
-    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    desc: "Guaranteed authentic pearls, sourced and crafted with care.",
     icon: "icon-original.svg",
   },
 ];

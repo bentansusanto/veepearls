@@ -18,26 +18,39 @@ const OurStory = () => {
         </div>
         <div className="md:w-[75%] lg:w-[60%] xl:w-[50%]">
           <p className="text-gray-300">
-            At Pearl, we believe in the allure and grace that pearls bring to
-            every outfit. Founded with a passion for quality and craftsmanship,
-            we source the finest pearls from around the world to create stunning
-            jewelry that lasts a lifetime. Our mission is to make luxury
-            accessible and to celebrate the unique beauty of each pearl, just
-            like the individuals who wear them.
+            Founded with a passion for pearls, we have dedicated ourselves to
+            bringing the finest pearls to our customers. Our journey began with
+            a love for these precious gems and a commitment to quality. Learn
+            more about our story and what drives us to deliver the best pearls
+            in the market.
           </p>
         </div>
       </div>
-      <div className="mt-10 grid grid-cols-1 md:grid-cols-2 gap-3">
-        {ourStory.map((list, idx) => (
-          <div key={idx} className='w-auto h-full'>
-            <Image
-              key={idx}
-              src={require(`@/assets/images/${list}`)}
-              alt={`${list}`}
-              className={`$w-auto h-full`}   
-            />
-          </div>
-        ))}
+      <div className="mt-10 flex flex-col gap-3">
+        <div className="flex flex-col gap-3 md:flex-row">
+          {ourStory.slice(0, 2).map((list, idx) => (
+            <div key={idx} className="h-full w-auto">
+              <Image
+                key={idx}
+                src={require(`@/assets/images/${list}`)}
+                alt={`${list}`}
+                className={`$w-auto h-full`}
+              />
+            </div>
+          ))}
+        </div>
+        <div className="flex flex-col gap-3 md:flex-row">
+          {ourStory.slice(2, 5).map((list, idx) => (
+            <div key={idx} className="h-full w-auto">
+              <Image
+                key={idx}
+                src={require(`@/assets/images/${list}`)}
+                alt={`${list}`}
+                className={`$w-auto h-full`}
+              />
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );
