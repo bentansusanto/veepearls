@@ -21,23 +21,23 @@ export const navData:NavProps[] = [
         subMenu: [
             {
                 name_menu: "Pearl Types",
-                link: "/"
+                link: "/pearl-education/pearl-types"
             },
             {
                 name_menu: "Pearl Grading",
-                link: "/"
+                link: "/pearl-education/pearl-grading"
             },
             {
                 name_menu: "Pearl Sizing",
-                link: "/"
+                link: "/pearl-education/pearl-size"
             },
             {
                 name_menu: "Pearl Color",
-                link: "/"
+                link: "/pearl-education/pearl-color"
             },
             {
                 name_menu: "Necklare Lengths",
-                link: "/"
+                link: "/pearl-education/necklare-length"
             },
         ]
     },

@@ -103,7 +103,7 @@ const BestProduct = () => {
         </p>
       </div>
       {/* Type Products */}
-      <div className="flex flex-wrap gap-3 mt-10 md:justify-center md:gap-3">
+      <div className="flex flex-wrap gap-3 mt-10 md:justify-center md:gap-2">
         {jewerlyType.map((list, idx) => (
           <div
             onClick={() => handleSelectType(list.name_type)}
