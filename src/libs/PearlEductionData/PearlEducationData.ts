@@ -124,6 +124,24 @@ export const pearlColor: PearlColor = {
   ],
 };
 
+export const colorPearl = [
+    {
+        name_color: "White"
+    },
+    {
+        name_color: "Black"
+    },
+    {
+        name_color: "Pink"
+    },
+    {
+        name_color: "Peach"
+    },
+    {
+        name_color: "Multicolor"
+    },
+]
+
 // data pearl grading
 export const pearlGrading = {};
 
