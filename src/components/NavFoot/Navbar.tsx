@@ -48,7 +48,7 @@ const Navbar = () => {
     <div className={` ${!isMobile && "py-4 md:px-8 lg:px-40"}`}>
       {isMobile ? (
         // Mobile
-        <div className="relative">
+        <div className="relative z-40">
           <div className="flex items-center justify-between px-5 py-3">
             <Link href={"/"}>
               <Image
@@ -92,7 +92,7 @@ const Navbar = () => {
             </div>
           </div>
           <div
-            className={`${open ? "top-20" : "-top-52 opacity-10"} absolute h-auto w-screen bg-[#202020] p-5 text-white shadow-md shadow-gray-800 transition-all duration-500`}
+            className={`${open ? "top-20" : "-top-52 opacity-10"} absolute h-auto w-screen bg-[#202020] p-5 text-white shadow-md shadow-gray-800 z-40 transition-all duration-500`}
           >
             {/* Menu */}
             <div className="space-y-5">
