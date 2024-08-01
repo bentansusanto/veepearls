@@ -69,7 +69,7 @@ const BestProduct = () => {
       if (type === "increment") {
         return prevQuantity + 1;
       } else {
-        return prevQuantity > 1 ? prevQuantity - 1 : 0;
+        return prevQuantity > 1 ? prevQuantity - 1 : 1;
       }
     });
   };
@@ -83,7 +83,9 @@ const BestProduct = () => {
   };
 
   const openDetailInfo =
-    selectInfo === "Product Information" ? detailProduct?.desc : "rating";
+    selectInfo === "Product Information"
+      ? detailProduct?.desc
+      : "rating not found";
 
   const handleSelectProduct = (idx: number) => {
     setSelectProduct(idx);
@@ -126,15 +128,18 @@ const BestProduct = () => {
         {filteredProducts.map((list, idx) => (
           <div key={idx} className="space-y-4">
             <div className="relative">
-              <div className="relative w-full py-40 overflow-hidden md:h-auto">
-                <div
-                  className="absolute inset-0 flex transition-transform duration-700 ease-in-out"
-                >
-                  <Carousel indicators={list.image.length > 0 && false} slideInterval={3000} >
+              <div
+                onMouseEnter={() => handleSelectProduct(idx)}
+                className="w-full py-40 overflow-hidden md:h-auto"
+              >
+                <div className="absolute inset-0 flex transition-transform duration-700 ease-in-out">
+                  <Carousel indicators={false}>
                     {list.image.map((img, idx) => (
-                      <div key={idx} className="relative flex-shrink-0 w-full h-full">
-                        <Image  
-                          onMouseEnter={() => handleSelectProduct(idx)}
+                      <div
+                        key={idx}
+                        className="relative flex-shrink-0 w-full h-full"
+                      >
+                        <Image
                           src={require(`@/assets/images/${img}`)}
                           alt={`image`}
                           className="object-cover w-full h-full"
@@ -162,18 +167,20 @@ const BestProduct = () => {
                       </div>
                     </AlertDialog.Trigger>
                     <AlertDialog.Content
-                      maxWidth="700px"
+                      maxWidth="800px"
                       size={"1"}
                       className="relative"
                     >
                       <div className="flex flex-col gap-10 p-3 md:flex-row">
-                        <div className="xl:max-w-lg">
-                          {detailProduct?.image !== undefined && (
+                        <div className="relative w-full py-40 overflow-hidden md:h-auto">
+                          <div className="absolute inset-0 flex transition-transform duration-700 ease-in-out">
                             <Carousel indicators={false}>
                               {detailProduct?.image.map((img, idx) => (
-                                <div key={idx} className="relative flex-shrink-0 w-full h-full">
+                                <div
+                                  key={idx}
+                                  className="w-full h-full"
+                                >
                                   <Image
-                                    
                                     src={require(`@/assets/images/${img}`)}
                                     alt={`image`}
                                     className="object-cover w-full h-full"
@@ -181,27 +188,27 @@ const BestProduct = () => {
                                 </div>
                               ))}
                             </Carousel>
-                          )}
+                          </div>
                         </div>
                         <div>
                           <div className="space-y-3">
                             <p className="text-sm text-gray-400">
                               {detailProduct?.name_type}
                             </p>
-                            <AlertDialog.Title className="font-semibold font-heading lg:text-2xl">
+                            <AlertDialog.Title className="font-semibold lg:text-2xl">
                               {detailProduct?.name_product}
                             </AlertDialog.Title>
                           </div>
-
+                          {/* increment quantity */}
                           <div className="flex items-center justify-center p-3 mt-8 space-x-10 border border-gray-300 rounded-md max-w-40">
                             <LuMinus
                               onClick={() => handleQuantityChange("decrement")}
-                              className="text-xl"
+                              className="text-xl cursor-pointer"
                             />
                             <p>{quantity}</p>
                             <LuPlus
                               onClick={() => handleQuantityChange("increment")}
-                              className="text-xl"
+                              className="text-xl cursor-pointer"
                             />
                           </div>
                           {/* price & button add to cart */}
@@ -219,7 +226,7 @@ const BestProduct = () => {
                             </AlertDialog.Action>
                           </div>
 
-                          <div className="mt-5 md:max-w-lg lg:max-w-md">
+                          <div className="mt-5 md:max-w-lg lg:max-w-xl">
                             <div className="flex items-center py-2 space-x-5 border-b-2 border-gray-100">
                               {detailInfo.map((detail, idx) => (
                                 <p
@@ -233,9 +240,22 @@ const BestProduct = () => {
                                 </p>
                               ))}
                             </div>
-                            <AlertDialog.Description className="mt-5 text-gray-400">
-                              {openDetailInfo}
-                            </AlertDialog.Description>
+                            <div className="mt-5 space-y-3 w-96">
+                              <p className="text-sm text-gray-500">
+                                Grade:{" "}
+                                <span className="font-semibold text-black">
+                                  {detailProduct?.detail_jewerly.grading}
+                                </span>
+                              </p>
+                              <p className="text-sm text-gray-500">
+                                Size:{" "}
+                                <span className="font-semibold text-black">
+                                  {detailProduct?.detail_jewerly.size}
+                                </span>
+                              </p>
+                              <p>{detailProduct?.desc}</p>
+                            </div>
+                            <AlertDialog.Description></AlertDialog.Description>
                           </div>
                         </div>
                       </div>
