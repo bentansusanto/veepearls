@@ -25,9 +25,9 @@ const NecklareLengthPage = () => {
         </p>
       </div>
       {/* List Length */}
-      <div className="flex flex-col items-center gap-5 mt-20 md:mt-40 md:flex-row md:gap-10">
+      <div className="flex flex-col items-center justify-center mx-auto md:mt-40 md:flex-row md:gap-10">
         <div className="relative">
-            <div className="border border-red-500">
+            <div>
                 <Image
                     src={require(`@/assets/images/${selectLength.image}`)}
                     alt="Pearl Necklace"
