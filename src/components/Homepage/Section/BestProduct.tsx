@@ -10,7 +10,7 @@ import React, { useEffect, useState } from "react";
 import { FiSearch } from "react-icons/fi";
 import { IoClose } from "react-icons/io5";
 import { LuMinus, LuPlus } from "react-icons/lu";
-import image from "@/libs/ImageData/ImageData";
+// import image from "@/libs/ImageData/ImageData";
 import { Carousel } from "flowbite-react";
 
 const BestProduct = () => {
@@ -171,10 +171,10 @@ const BestProduct = () => {
                         <div className="xl:max-w-lg">
                           {detailProduct?.image !== undefined && (
                             <Carousel indicators={false}>
-                              {detailProduct?.image.map((img, imgIdx) => (
+                              {detailProduct?.image.map((img, idx) => (
                                 <div className="relative flex-shrink-0 w-full h-full">
                                   <Image
-                                    key={imgIdx}
+                                    key={idx}
                                     src={require(`@/assets/images/${img}`)}
                                     alt={`image`}
                                     className="object-cover w-full h-full"
