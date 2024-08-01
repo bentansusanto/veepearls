@@ -6,11 +6,12 @@ import { ProductJewerly } from "@/types/ProductType";
 import { AlertDialog } from "@radix-ui/themes";
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
-import { FaStar } from "react-icons/fa";
+// import { FaStar } from "react-icons/fa";
 import { FiSearch } from "react-icons/fi";
 import { IoClose } from "react-icons/io5";
 import { LuMinus, LuPlus } from "react-icons/lu";
-
+import image from "@/libs/ImageData/ImageData";
+import { Carousel } from "flowbite-react";
 
 const BestProduct = () => {
   const { isMobile } = Mobile();
@@ -21,7 +22,6 @@ const BestProduct = () => {
   const [selectProduct, setSelectProduct] = useState({});
   const [selectType, setSelectType] = useState("");
   const [openSelect, setOpenSelect] = useState(false);
-
   const [selectInfo, setSelectInfo] = useState("Product Information");
   const detailInfo = [
     {
@@ -36,38 +36,43 @@ const BestProduct = () => {
     ? productJewerly.filter((product) => product.name_type === selectType)
     : productJewerly;
 
-    const handleAddToCart = () => {
-      const cart = JSON.parse(localStorage.getItem('cart') || '[]');
-      const existingItem = cart.find((item: ProductJewerly) => item.name_product === detailProduct?.name_product);
-      if (existingItem) {
-        existingItem.quantity += quantity;
-        existingItem.totalPrice += detailProduct?.price as number * quantity;
-      } else {
-        cart.push({...detailProduct, quantity, totalPrice: detailProduct?.price as number * quantity });
-      }
-      localStorage.setItem('cart', JSON.stringify(cart));
-      emitter.emit('cartUpdated', cart.length);
-
-    }; 
-
-    useEffect(() => {
-      if (detailProduct) {
-        setQuantity(1); // Reset quantity when modal opens
-      }
-    }, [detailProduct]);
-  
-
-    const totalPrice = detailProduct?.price as number * quantity;
-
-    const handleQuantityChange = (type: 'increment' | 'decrement') => {
-      setQuantity((prevQuantity) => {
-        if (type === 'increment') {
-          return prevQuantity + 1;
-        } else {
-          return prevQuantity > 1 ? prevQuantity - 1 : 1;
-        }
+  const handleAddToCart = () => {
+    const cart = JSON.parse(localStorage.getItem("cart") || "[]");
+    const existingItem = cart.find(
+      (item: ProductJewerly) =>
+        item.name_product === detailProduct?.name_product,
+    );
+    if (existingItem) {
+      existingItem.quantity += quantity;
+      existingItem.totalPrice += (detailProduct?.price as number) * quantity;
+    } else {
+      cart.push({
+        ...detailProduct,
+        quantity,
+        totalPrice: (detailProduct?.price as number) * quantity,
       });
-    };  
+    }
+    localStorage.setItem("cart", JSON.stringify(cart));
+    emitter.emit("cartUpdated", cart.length);
+  };
+
+  useEffect(() => {
+    if (detailProduct) {
+      setQuantity(1); // Reset quantity when modal opens
+    }
+  }, [detailProduct]);
+
+  const totalPrice = (detailProduct?.price as number) * quantity;
+
+  const handleQuantityChange = (type: "increment" | "decrement") => {
+    setQuantity((prevQuantity) => {
+      if (type === "increment") {
+        return prevQuantity + 1;
+      } else {
+        return prevQuantity > 1 ? prevQuantity - 1 : 0;
+      }
+    });
+  };
 
   const handleOpenModal = (list: ProductJewerly) => {
     setDetailProduct(list);
@@ -77,8 +82,8 @@ const BestProduct = () => {
     setSelectInfo(name_menu);
   };
 
-  const openDetailInfo = selectInfo === "Product Information" ? detailProduct?.desc : "rating"
-  
+  const openDetailInfo =
+    selectInfo === "Product Information" ? detailProduct?.desc : "rating";
 
   const handleSelectProduct = (idx: number) => {
     setSelectProduct(idx);
@@ -121,12 +126,25 @@ const BestProduct = () => {
         {filteredProducts.map((list, idx) => (
           <div key={idx} className="space-y-4">
             <div className="relative">
-              <Image
-                onMouseEnter={() => handleSelectProduct(idx)}
-                src={require(`@/assets/images/${list.image}`)}
-                alt={`${list.image}`}
-                className="rounded-md"
-              />
+              <div className="relative w-full py-40 overflow-hidden md:h-auto">
+                <div
+                  className="absolute inset-0 flex transition-transform duration-700 ease-in-out"
+                >
+                  <Carousel indicators={list.image.length > 0 && false} slideInterval={3000} >
+                    {list.image.map((img, imgIdx) => (
+                      <div className="relative flex-shrink-0 w-full h-full">
+                        <Image
+                          key={imgIdx}
+                          onMouseEnter={() => handleSelectProduct(idx)}
+                          src={require(`@/assets/images/${img}`)}
+                          alt={`image`}
+                          className="object-cover w-full h-full"
+                        />
+                      </div>
+                    ))}
+                  </Carousel>
+                </div>
+              </div>
               <div
                 className={`${openSelect && selectProduct === idx ? "w-auto opacity-50" : "hidden h-0"} absolute inset-0 bg-black transition-all duration-500`}
               />
@@ -144,40 +162,48 @@ const BestProduct = () => {
                         />
                       </div>
                     </AlertDialog.Trigger>
-                    <AlertDialog.Content maxWidth="700px" size={'1'} className="relative">
+                    <AlertDialog.Content
+                      maxWidth="700px"
+                      size={"1"}
+                      className="relative"
+                    >
                       <div className="flex flex-col gap-10 p-3 md:flex-row">
                         <div className="xl:max-w-lg">
                           {detailProduct?.image !== undefined && (
-                            <Image
-                              src={require(
-                                `@/assets/images/${detailProduct?.image}`,
-                              )}
-                              alt="detail_products"
-                              className="w-full"
-                            />
+                            <Carousel indicators={false}>
+                              {detailProduct?.image.map((img, imgIdx) => (
+                                <div className="relative flex-shrink-0 w-full h-full">
+                                  <Image
+                                    key={imgIdx}
+                                    src={require(`@/assets/images/${img}`)}
+                                    alt={`image`}
+                                    className="object-cover w-full h-full"
+                                  />
+                                </div>
+                              ))}
+                            </Carousel>
                           )}
                         </div>
                         <div>
                           <div className="space-y-3">
-                            <p className="text-sm text-gray-400">{detailProduct?.name_type}</p>
+                            <p className="text-sm text-gray-400">
+                              {detailProduct?.name_type}
+                            </p>
                             <AlertDialog.Title className="font-semibold font-heading lg:text-2xl">
-                                {detailProduct?.name_product}
+                              {detailProduct?.name_product}
                             </AlertDialog.Title>
-                            <div className="flex items-center mt-3 space-x-2">
-                              <FaStar className="text-xl text-[#B2A671]" />
-                              <p className="text-[15px]">
-                                {detailProduct?.rating}{" "}
-                                <span className="text-gray-400">
-                                  (20 reviews)
-                                </span>
-                              </p>
-                            </div>
                           </div>
-                          {/* increment & decrement product quantity */}
+
                           <div className="flex items-center justify-center p-3 mt-8 space-x-10 border border-gray-300 rounded-md max-w-40">
-                            <LuMinus onClick={() => handleQuantityChange('decrement')} className="text-xl" />
+                            <LuMinus
+                              onClick={() => handleQuantityChange("decrement")}
+                              className="text-xl"
+                            />
                             <p>{quantity}</p>
-                            <LuPlus onClick={() => handleQuantityChange('increment')} className="text-xl" />
+                            <LuPlus
+                              onClick={() => handleQuantityChange("increment")}
+                              className="text-xl"
+                            />
                           </div>
                           {/* price & button add to cart */}
                           <div className="flex items-center justify-between p-3 mt-3 border border-gray-300 xl:max-w-64">
@@ -185,18 +211,24 @@ const BestProduct = () => {
                               {dollar(totalPrice)}
                             </p>
                             <AlertDialog.Action>
-                               <p onClick={handleAddToCart} className="text-lg font-semibold cursor-pointer">Add To Cart</p>
+                              <p
+                                onClick={handleAddToCart}
+                                className="text-lg font-semibold cursor-pointer"
+                              >
+                                Add To Cart
+                              </p>
                             </AlertDialog.Action>
                           </div>
 
-                          {/* Information Products */}
-                          <div className="mt-5 lg:max-w-md md:max-w-lg">
+                          <div className="mt-5 md:max-w-lg lg:max-w-md">
                             <div className="flex items-center py-2 space-x-5 border-b-2 border-gray-100">
                               {detailInfo.map((detail, idx) => (
                                 <p
-                                  className={`${selectInfo !== detail.name_menu &&  "text-gray-400 font-normal"} cursor-pointer transition-all font-semibold duration-300`}
+                                  className={`${selectInfo !== detail.name_menu && "font-normal text-gray-400"} cursor-pointer font-semibold transition-all duration-300`}
                                   key={idx}
-                                  onClick={() => handleSelectInfo(detail.name_menu)}
+                                  onClick={() =>
+                                    handleSelectInfo(detail.name_menu)
+                                  }
                                 >
                                   {detail.name_menu}
                                 </p>
@@ -217,8 +249,6 @@ const BestProduct = () => {
                       </div>
                     </AlertDialog.Content>
                   </AlertDialog.Root>
-
-                  {/* <IoBagOutline cl assName="text-2xl" /> */}
                 </div>
               )}
             </div>
@@ -226,10 +256,10 @@ const BestProduct = () => {
               <h2 className="font-semibold font-heading lg:text-lg">
                 {list.name_product}
               </h2>
-              <div className="flex space-x-2">
+              {/* <div className="flex space-x-2">
                 <FaStar className="text-xl text-[#B2A671]" />
                 <p className="text-gray-300">{list.rating}</p>
-              </div>
+              </div> */}
               <p className="text-xl font-bold">{dollar(list.price)}</p>
             </div>
           </div>
