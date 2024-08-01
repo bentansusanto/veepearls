@@ -19,7 +19,7 @@ const PearlColorPage = () => {
     setSelectColor(name_color);
   };
   return (
-    <div className={`${isMobile ? "mt-10" : "mt-40 md:px-8 lg:px-28"}`}>
+    <div className={`${isMobile ? "mt-10" : "mt-20 md:px-8 lg:px-28"}`}>
       {/* Heading */}
       <div className={` ${isMobile && "bg-black py-20"} relative mx-auto`}>
         <Image

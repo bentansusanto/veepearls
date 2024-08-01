@@ -145,6 +145,8 @@ export const colorPearl = [
 // data pearl grading
 export const pearlGrading = {};
 
+
+
 // data necklare length
 export const necklareLength:NecklareLength = {
     heading: "Necklare Lengths",
@@ -154,43 +156,43 @@ export const necklareLength:NecklareLength = {
             name_length: `16" Choker Length`,
             description: "A choker length pearl necklace is one of the most classic lengths. This versatile size can be worn with almost any neckline and for any occasion.",
             size: `16"`,
-            image: "pearl-necklare-size-16.jpg"
+            image: "pearl-necklare-size-16.svg"
         },
         {
             name_length: `17" Princess Length`,
             description: "One of the most popular length selected by women today, the princess length is intended to sit at or right below the collar bone. Its length creates versatility and is well suited with a variety of women's attire, including V-neck shirts and button-up blouses.",
             size: `17"`,
-            image: "pearl-necklare-size-17.jpg"
+            image: "pearl-necklare-size-17.svg"
         },
         {
             name_length: `18" Princess Length`,
             description: "One of the most popular length selected by women today, the princess length is intended to sit at or right below the collar bone. Its length creates versatility and is well suited with a variety of women's attire, including V-neck shirts and button-up blouses.",
             size: `18"`,
-            image: "pearl-necklare-size-18.jpg"
+            image: "pearl-necklare-size-18.svg"
         },
         {
             name_length: `20" Matinee Length`,
             description: "The pearl matinee necklace is a great choice for casual or business attire. It typically sits well below the neckline and is desired because of its versatility as a casual necklace, as well as a necklace for formal occasions. The matinee length also goes well as a multi-layered necklace, with a shorter choker or princess length sitting above it.",
             size: `20"`,
-            image: "pearl-necklare-size-20.jpg"
+            image: "pearl-necklare-size-20.svg"
         },
         {
             name_length: `24" Matinee Length`,
             description: "The pearl matinee necklace is a great choice for casual or business attire. It typically sits well below the neckline and is desired because of its versatility as a casual necklace, as well as a necklace for formal occasions. The matinee length also goes well as a multi-layered necklace, with a shorter choker or princess length sitting above it. The pearl matinee necklace is a great choice for casual or business attire. It typically sits well below the neckline and is desired because of its versatility as a casual necklace, as well as a necklace for formal occasions. The matinee length also goes well as a multi-layered necklace, with a shorter choker or princess length sitting above it.",
             size: `24"`,
-            image: "pearl-necklare-size-24.jpg"
+            image: "pearl-necklare-size-24.svg"
         },
         {
             name_length: `36" Opera Length`,
             description: "This pearl length is popular for its versatility as one long necklace or the ability to rap around a woman's neck twice, creating a double strand of pearls. This necklace length is also very suitable for layering and its ability to be appropriate in both casual and formal settings.",
             size: `36"`,
-            image: "pearl-necklare-size-36.jpg"
+            image: "pearl-necklare-size-36.svg"
         },
         {
             name_length: `51" Rope Length`,
             description: `A necklace any longer than Opera Length is typically considered a "pearl rope" and can be designed to create maximum versatility for the wearer, such as one long necklace, two layered necklaces, or three shorter necklaces when wrapped around the neck multiple times.`,
             size: `51"`,
-            image: "pearl-necklare-size-51.jpg"
+            image: "pearl-necklare-size-51.svg"
         },
     ]
 };
