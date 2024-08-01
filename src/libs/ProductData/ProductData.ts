@@ -18,6 +18,10 @@ export const jewerlyType = [
     image: "type-necklare.jpg",
   },
   {
+    name_type: "Brooch",
+    image: "type-necklare.jpg",
+  },
+  {
     name_type: "Set of Jewerly",
     image: "type-necklare.jpg",
   },
