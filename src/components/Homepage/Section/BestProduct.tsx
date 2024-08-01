@@ -167,104 +167,106 @@ const BestProduct = () => {
                       </div>
                     </AlertDialog.Trigger>
                     <AlertDialog.Content
-                      maxWidth="800px"
+                      
+                      maxWidth={`${isMobile? "380px" : "800px"}`}
                       size={"1"}
-                      className="relative"
                     >
-                      <div className="flex flex-col gap-10 p-3 md:flex-row">
-                        <div className="relative w-full py-40 overflow-hidden md:h-auto">
-                          <div className="absolute inset-0 flex transition-transform duration-700 ease-in-out">
-                            <Carousel indicators={false}>
-                              {detailProduct?.image.map((img, idx) => (
-                                <div
-                                  key={idx}
-                                  className="w-full h-full"
-                                >
-                                  <Image
-                                    src={require(`@/assets/images/${img}`)}
-                                    alt={`image`}
-                                    className="object-cover w-full h-full"
-                                  />
-                                </div>
-                              ))}
-                            </Carousel>
-                          </div>
-                        </div>
-                        <div>
-                          <div className="space-y-3">
-                            <p className="text-sm text-gray-400">
-                              {detailProduct?.name_type}
-                            </p>
-                            <AlertDialog.Title className="font-semibold lg:text-2xl">
-                              {detailProduct?.name_product}
-                            </AlertDialog.Title>
-                          </div>
-                          {/* increment quantity */}
-                          <div className="flex items-center justify-center p-3 mt-8 space-x-10 border border-gray-300 rounded-md max-w-40">
-                            <LuMinus
-                              onClick={() => handleQuantityChange("decrement")}
-                              className="text-xl cursor-pointer"
-                            />
-                            <p>{quantity}</p>
-                            <LuPlus
-                              onClick={() => handleQuantityChange("increment")}
-                              className="text-xl cursor-pointer"
-                            />
-                          </div>
-                          {/* price & button add to cart */}
-                          <div className="flex items-center justify-between p-3 mt-3 border border-gray-300 xl:max-w-64">
-                            <p className="text-lg font-bold">
-                              {dollar(totalPrice)}
-                            </p>
-                            <AlertDialog.Action>
-                              <p
-                                onClick={handleAddToCart}
-                                className="text-lg font-semibold cursor-pointer"
-                              >
-                                Add To Cart
-                              </p>
-                            </AlertDialog.Action>
-                          </div>
-
-                          <div className="mt-5 md:max-w-lg lg:max-w-xl">
-                            <div className="flex items-center py-2 space-x-5 border-b-2 border-gray-100">
-                              {detailInfo.map((detail, idx) => (
-                                <p
-                                  className={`${selectInfo !== detail.name_menu && "font-normal text-gray-400"} cursor-pointer font-semibold transition-all duration-300`}
-                                  key={idx}
-                                  onClick={() =>
-                                    handleSelectInfo(detail.name_menu)
-                                  }
-                                >
-                                  {detail.name_menu}
-                                </p>
-                              ))}
+                      <div className="relative">
+                        <div className="flex flex-col gap-10 p-3 md:flex-row">
+                          <div className="relative w-full py-40 overflow-hidden md:h-auto">
+                            <div className="absolute inset-0 flex transition-transform duration-700 ease-in-out">
+                              <Carousel indicators={false}>
+                                {detailProduct?.image.map((img, idx) => (
+                                  <div
+                                    key={idx}
+                                    className="w-full h-full"
+                                  >
+                                    <Image
+                                      src={require(`@/assets/images/${img}`)}
+                                      alt={`image`}
+                                      className="object-cover w-full h-full"
+                                    />
+                                  </div>
+                                ))}
+                              </Carousel>
                             </div>
-                            <div className="mt-5 space-y-3 w-96">
-                              <p className="text-sm text-gray-500">
-                                Grade:{" "}
-                                <span className="font-semibold text-black">
-                                  {detailProduct?.detail_jewerly.grading}
-                                </span>
-                              </p>
-                              <p className="text-sm text-gray-500">
-                                Size:{" "}
-                                <span className="font-semibold text-black">
-                                  {detailProduct?.detail_jewerly.size}
-                                </span>
-                              </p>
-                              <p>{detailProduct?.desc}</p>
-                            </div>
-                            <AlertDialog.Description></AlertDialog.Description>
                           </div>
-                        </div>
-                      </div>
-                      <div className="absolute p-5 text-white bg-black rounded-full -right-3 -top-3">
-                        <AlertDialog.Cancel>
                           <div>
-                            <IoClose className="text-xl" />
+                            <div className="space-y-3">
+                              <p className="text-sm text-gray-400">
+                                {detailProduct?.name_type}
+                              </p>
+                              <AlertDialog.Title className="font-semibold lg:text-2xl">
+                                {detailProduct?.name_product}
+                              </AlertDialog.Title>
+                            </div>
+                            {/* increment quantity */}
+                            <div className="flex items-center justify-center p-3 mt-8 space-x-10 border border-gray-300 rounded-md max-w-40">
+                              <LuMinus
+                                onClick={() => handleQuantityChange("decrement")}
+                                className="text-xl cursor-pointer"
+                              />
+                              <p>{quantity}</p>
+                              <LuPlus
+                                onClick={() => handleQuantityChange("increment")}
+                                className="text-xl cursor-pointer"
+                              />
+                            </div>
+                            {/* price & button add to cart */}
+                            <div className="flex items-center justify-between p-3 mt-3 border border-gray-300 xl:max-w-64">
+                              <p className="text-lg font-bold">
+                                {dollar(totalPrice)}
+                              </p>
+                              <AlertDialog.Action>
+                                <p
+                                  onClick={handleAddToCart}
+                                  className="text-lg font-semibold cursor-pointer"
+                                >
+                                  Add To Cart
+                                </p>
+                              </AlertDialog.Action>
+                            </div>
+
+                            <div className="mt-5 md:max-w-lg lg:max-w-xl">
+                              <div className="flex items-center py-2 space-x-5 border-b-2 border-gray-100">
+                                {detailInfo.map((detail, idx) => (
+                                  <p
+                                    className={`${selectInfo !== detail.name_menu && "font-normal text-gray-400"} cursor-pointer font-semibold transition-all duration-300`}
+                                    key={idx}
+                                    onClick={() =>
+                                      handleSelectInfo(detail.name_menu)
+                                    }
+                                  >
+                                    {detail.name_menu}
+                                  </p>
+                                ))}
+                              </div>
+                              <div className="mt-5 space-y-3 w-96">
+                                <p className="text-sm text-gray-500">
+                                  Grade:{" "}
+                                  <span className="font-semibold text-black">
+                                    {detailProduct?.detail_jewerly.grading}
+                                  </span>
+                                </p>
+                                <p className="text-sm text-gray-500">
+                                  Size:{" "}
+                                  <span className="font-semibold text-black">
+                                    {detailProduct?.detail_jewerly.size}
+                                  </span>
+                                </p>
+                                <p>{detailProduct?.desc}</p>
+                              </div>
+                              <AlertDialog.Description></AlertDialog.Description>
+                            </div>
                           </div>
-                        </AlertDialog.Cancel>
+                        </div>
+                        <div className="absolute p-5 text-white bg-black rounded-full -right-5 -top-5">
+                          <AlertDialog.Cancel>
+                            <div>
+                              <IoClose className="text-xl" />
+                            </div>
+                          </AlertDialog.Cancel>
+                        </div>
                       </div>
                     </AlertDialog.Content>
                   </AlertDialog.Root>

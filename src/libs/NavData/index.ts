@@ -7,11 +7,11 @@ export const navData:NavProps[] = [
         subMenu: [
             {
                 name_menu: "Blog",
-                link: "/"
+                link: "#"
             },
             {
                 name_menu: "Contact Us",
-                link: "/"
+                link: "#"
             },
         ]
     },
@@ -68,19 +68,19 @@ export const navData:NavProps[] = [
 export const occationData:SubMenu[] = [
     {
         name_menu: "Anniversaries",
-        link: "/"
+        link: "/occasions/anniversaries"
     },
     {
         name_menu: "Birthdays",
-        link: "/"
+        link: "/occasions/birthdays"
     },
     {
         name_menu: "Holidays",
-        link: "/"
+        link: "/occasions/holidays"
     },
     {
         name_menu: "Weddings",
-        link: "/"
+        link: "/occasions/weddings"
     },
 ]
 
@@ -110,30 +110,30 @@ export const pearlEducationData:SubMenu[] = [
 export const aboutUsData:SubMenu[] = [
     {
         name_menu: "Blog",
-        link: "/"
+        link: "#"
     },
     {
         name_menu: "Contact Us",
-        link: "/"
+        link: "#"
     },
 ]
 
 export const customerSupport:SubMenu[] = [
     {
         name_menu: "FAQ",
-        link: "/"
+        link: "#"
     },
     {
         name_menu: "Shipping",
-        link: "/"
+        link: "#"
     },
     {
         name_menu: "Feedback",
-        link: "/"
+        link: "#"
     },
     {
         name_menu: "Payment Method",
-        link: "/"
+        link: "#"
     },
 ]
 
