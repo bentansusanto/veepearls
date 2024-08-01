@@ -46,8 +46,7 @@ const NecklareLengthPage = () => {
             ))}
           </div>
         </div>
-
-        <div className="space-y-3 text-white md:max-w-md lg:max-w-xl">
+        <div className="mt-10 space-y-3 text-white md:max-w-md lg:max-w-xl">
           <h2 className="text-2xl font-bold">{selectLength.name_length}</h2>
           <p>{selectLength.description}</p>
         </div>
