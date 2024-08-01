@@ -131,10 +131,10 @@ const BestProduct = () => {
                   className="absolute inset-0 flex transition-transform duration-700 ease-in-out"
                 >
                   <Carousel indicators={list.image.length > 0 && false} slideInterval={3000} >
-                    {list.image.map((img, imgIdx) => (
+                    {list.image.map((img, idx) => (
                       <div className="relative flex-shrink-0 w-full h-full">
                         <Image
-                          key={imgIdx}
+                          key={idx}
                           onMouseEnter={() => handleSelectProduct(idx)}
                           src={require(`@/assets/images/${img}`)}
                           alt={`image`}
