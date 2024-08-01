@@ -25,7 +25,7 @@ const NecklareLengthPage = () => {
         </p>
       </div>
       {/* List Length */}
-      <div className="flex flex-col items-center justify-center mx-auto md:mt-40 md:flex-row md:gap-10">
+      <div className="flex flex-col items-center justify-center mx-auto mt-20 md:mt-40 md:flex-row md:gap-10">
         <div className="relative">
             <div>
                 <Image
