@@ -132,9 +132,8 @@ const BestProduct = () => {
                 >
                   <Carousel indicators={list.image.length > 0 && false} slideInterval={3000} >
                     {list.image.map((img, idx) => (
-                      <div className="relative flex-shrink-0 w-full h-full">
-                        <Image
-                          key={idx}
+                      <div key={idx} className="relative flex-shrink-0 w-full h-full">
+                        <Image  
                           onMouseEnter={() => handleSelectProduct(idx)}
                           src={require(`@/assets/images/${img}`)}
                           alt={`image`}
@@ -172,9 +171,9 @@ const BestProduct = () => {
                           {detailProduct?.image !== undefined && (
                             <Carousel indicators={false}>
                               {detailProduct?.image.map((img, idx) => (
-                                <div className="relative flex-shrink-0 w-full h-full">
+                                <div key={idx} className="relative flex-shrink-0 w-full h-full">
                                   <Image
-                                    key={idx}
+                                    
                                     src={require(`@/assets/images/${img}`)}
                                     alt={`image`}
                                     className="object-cover w-full h-full"
