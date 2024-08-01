@@ -29,7 +29,7 @@ export const navData:NavProps[] = [
             },
             {
                 name_menu: "Pearl Sizing",
-                link: "/pearl-education/pearl-size"
+                link: "#"
             },
             {
                 name_menu: "Pearl Color",
@@ -87,23 +87,23 @@ export const occationData:SubMenu[] = [
 export const pearlEducationData:SubMenu[] = [
     {
         name_menu: "Pearl Types",
-        link: "/"
+        link: "/pearl-education/pearl-types"
     },
     {
         name_menu: "Pearl Grading",
-        link: "/"
+        link: "/pearl-education/pearl-grading"
     },
     {
         name_menu: "Pearl Sizing",
-        link: "/"
+        link: "#"
     },
     {
         name_menu: "Pearl Color",
-        link: "/"
+        link: "/pearl-education/pearl-color"
     },
     {
         name_menu: "Necklare Lengths",
-        link: "/"
+        link: "/pearl-education/necklare-length"
     },
 ]
 
