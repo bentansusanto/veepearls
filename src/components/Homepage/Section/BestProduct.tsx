@@ -250,8 +250,10 @@ const BestProduct = () => {
                                 </p>
                                 <p className="text-sm text-gray-500">
                                   Size:{" "}
-                                  <span className="font-semibold text-black">
-                                    {detailProduct?.detail_jewerly.size}
+                                  <span className="space-x-2 font-semibold text-black">
+                                    {detailProduct?.detail_jewerly.size.map((list) => (
+                                      <p key={list}>, {list}</p>
+                                    ))}
                                   </span>
                                 </p>
                                 <p>{detailProduct?.desc}</p>
@@ -274,7 +276,7 @@ const BestProduct = () => {
               )}
             </div>
             <div className="space-y-3 text-white">
-              <h2 className="font-semibold font-heading lg:text-lg">
+              <h2 className="font-semibold font-lato lg:text-lg">
                 {list.name_product}
               </h2>
               {/* <div className="flex space-x-2">

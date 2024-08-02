@@ -6,8 +6,8 @@ export const jewerlyTypeHome = [
     image: "type-necklare.jpg"
   },
   {
-    name_type: "Breklet",
-    image: "type-necklare.jpg"
+    name_type: "Bracelet",
+    image: "type-bracelet.jpg"
   },
   {
     name_type: "Ring",
@@ -15,15 +15,15 @@ export const jewerlyTypeHome = [
   },
   {
     name_type: "Earings",
-    image: "type-necklare.jpg"
+    image: "type-earings.jpg"
   },
   {
     name_type: "Brooch",
-    image: "type-necklare.jpg"
+    image: "type-brooch.jpg"
   },
   {
     name_type: "Set of Jewelry",
-    image: "type-necklare.jpg"
+    image: "type-sets-of-jewelry.jpg"
   },
 ]
 
@@ -35,9 +35,9 @@ export const jewerlyType:JewerlyType[] = [
     description: "Unique in their ability to carry an outfit from day to night, a sophisticated necklace made from pearls is an elegant staple for any fine jewelry collection. For minimalist allure, a tincup style pairs perfectly with other silver or gold-toned pieces, while colored necklaces allow for making a beautifully bold statement.",
   },
   {
-    name_type: "Breklet",
+    name_type: "Bracelet",
     image: "pearls-katalog2.jpg",
-    type: "breklet",
+    type: "bracelet",
     description: "Adorn your wrist with gems of the sea to make a noticeable statement. A symbol of classic beauty, pearl bracelets look divine alone or even layered for a more modern appeal. Choose a colored overtone to set your mood and an ornately crafted clasp for a look thats uniquely yours."
   },
   {
@@ -66,6 +66,7 @@ export const jewerlyType:JewerlyType[] = [
   },
 ];
 
+// list products
 export const productJewerly: ProductJewerly[] = [
   // Type Rings
   {
@@ -144,6 +145,39 @@ export const productJewerly: ProductJewerly[] = [
       size: ["15cm", "17cm"],
     },
   },
+  {
+    name_product: "12 White Freshwater Pearl Necklace - AA Quality",
+    name_type: "Necklare",
+    slug_type: "necklare",
+    price: 96,
+    image: [
+      "Necklare/Necklare02/necklare02-1.jpeg",
+      "Necklare/Necklare02/necklare02-2.jpeg",
+      "Necklare/Necklare02/necklare02-3.jpeg",
+    ],
+    video: "/Necklare/Necklare01/necklare01-video.mp4",
+    desc: "12 White Freshwater Pearl Necklace - AA Quality 1 layer necklace ",
+    detail_jewerly: {
+      grading: "AA",
+      size: ["32cm", "79cm"],
+    },
+  },
+  {
+    name_product: "5-9cm White Freshwater Pearl Necklace - AAA Quality",
+    name_type: "Necklare",
+    slug_type: "necklare",
+    price: 96,
+    image: [
+      "Necklare/Necklare03/necklare03-1.jpeg",
+      "Necklare/Necklare03/necklare03-2.jpeg",
+    ],
+    video: "/Necklare/Necklare01/necklare01-video.mp4",
+    desc: "5-9cm White Freshwater Pearl Necklace - AAA Quality 11 layer necklace huge style",
+    detail_jewerly: {
+      grading: "AA",
+      size: ["32cm", "79cm"],
+    },
+  },
   // type brooch
   {
     name_product: "10mm White Silver SeaPearl",
@@ -197,4 +231,19 @@ export const productJewerly: ProductJewerly[] = [
       size: ["10mm"],
     },
   },
+  // sets of jewelry
+  {
+    name_product: "12 White Freshwater Pearl Necklace - AA Quality",
+    name_type: "Set of Jewelry",
+    slug_type: "sets",
+    price: 71,
+    image: ["Sets-of-Jewelry/Sets01/sets01-1.jpeg","Sets-of-Jewelry/Sets01/sets01-2.jpeg", "Sets-of-Jewelry/Sets01/sets01-3.jpeg"],
+    video: "/Brooch/Brooch04/brooch04-1.mp4",
+    desc: "12 White Freshwater Pearl Necklace - AA Quality 1 layer necklace with earring set",
+    detail_jewerly: {
+      grading: "AA",
+      size: ["13cm", "37cm"],
+    },
+  },
+
 ];
