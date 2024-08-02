@@ -1,6 +1,8 @@
 export type JewerlyType = {
     name_type: string;
     image: string;
+    type: string;
+    description: string;
 }
 
 type jewerlyDesc = {
@@ -12,6 +14,7 @@ export type ProductJewerly = {
     totalPrice?: any;
     name_product: string;
     name_type: string,
+    slug_type: string;
     image: string[];
     video: string;
     price: number;

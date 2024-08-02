@@ -1,4 +1,6 @@
 import { NavProps, SocialMedia, SubMenu } from "@/types/NavbarTypes";
+import { jewerlyType } from "../ProductData/ProductData";
+import { list } from "postcss";
 
 export const navData:NavProps[] = [
     {

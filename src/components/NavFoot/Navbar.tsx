@@ -12,7 +12,9 @@ import { IoBagOutline, IoClose } from "react-icons/io5";
 import { FaRegHeart } from "react-icons/fa6";
 import { HiOutlineMenu } from "react-icons/hi";
 import emitter from "@/config/EmitterEvent";
-import {Dropdown} from 'flowbite-react'
+// import {Dropdown} from 'flowbite-react'
+import { jewerlyType } from "@/libs/ProductData/ProductData";
+import { useRouter } from "next/navigation";
 
 const Navbar = () => {
   const { isMobile } = Mobile();
@@ -20,6 +22,8 @@ const Navbar = () => {
   const [selectMenu, setSelectMenu] = useState({});
   const [cartCount, setCartCount] = useState<number>(0);
   const [openSubMenu, setOpenSubMenu] = useState<boolean>(false);
+  const [openSubTypes, setOpenSubTypes] = useState<boolean>(false);
+  const router = useRouter()
 
   useEffect(() => {
     const updateCartCount = () => {
@@ -43,6 +47,17 @@ const Navbar = () => {
   const handleOpenNavMenu = () => {
     setOpen(!open);
   };
+
+  const handleSubMenuTypes = () => {
+    setOpenSubTypes(!openSubTypes)
+  }
+  
+
+  const handleClick = (type: string) => {
+    console.log("Success pindah page jewerly type")
+    router.push(`/jewelry/${type}`);
+  };
+
 
   return (
     <div className={` ${!isMobile && "py-4 md:px-8 lg:px-40"}`}>
@@ -122,18 +137,42 @@ const Navbar = () => {
                   )}
                 </div>
               ))}
+              {/* jewelry type */}
+              <div>
+                <p onClick={handleSubMenuTypes} className="font-semibold font-heading">Jewelry Type</p>
+                {
+                  openSubTypes && 
+                  <ul className="mt-5 ml-5 space-y-5">
+                  {
+                    jewerlyType.map((list, idx) => (
+                      <li onClick={() => handleClick(list.name_type)} key={idx} className="text-gray-300 font-heading">
+                        <p>{list.name_type}</p>
+                      </li>
+                    ))
+                  }
+                  </ul>
+                }
+              </div>
             </div>
           </div>
         </div>
       ) : (
         // Desktop & Tablet
         <div className="flex items-center justify-between">
+         {/* logo */}
+         <Link href={"/"}>
+            <Image
+              src={image.LogoVeepearl}
+              alt="logo-veepearl"
+              className="md:w-16 lg:w-20"
+            />
+          </Link>
           {/* dropdown menu */}
           <div className="flex items-center space-x-6 text-gray-200 lg:space-x-10">
             {navData.map((list, idx) => (
               <HoverCard.Root key={idx}>
                 <HoverCard.Trigger>
-                  <h1 className="cursor-pointer">{list.pages}</h1>
+                  <h1 className="font-semibold cursor-pointer">{list.pages}</h1>
                 </HoverCard.Trigger>
                 <HoverCard.Content size="1" className="p-5 shadow">
                   <ul className="space-y-3 text-black">
@@ -146,15 +185,24 @@ const Navbar = () => {
                 </HoverCard.Content>
               </HoverCard.Root>
             ))}
+            {/* jewerly type */}
+            <div>
+            <HoverCard.Root>
+                <HoverCard.Trigger>
+                  <p className="font-semibold cursor-pointer">Jewerly Type</p>
+                </HoverCard.Trigger>
+                <HoverCard.Content size="1" className="p-5 shadow">
+                  <ul className="space-y-3 text-black">
+                    {jewerlyType.map((data, idx) => (
+                      <li onClick={() => handleClick(data.type)} key={idx} className={`list-none font-lato cursor-pointer`}>
+                        <p className="">{data.name_type}</p>
+                      </li>
+                    ))}
+                  </ul>
+                </HoverCard.Content>
+              </HoverCard.Root>
+            </div>
           </div>
-          {/* logo */}
-          <Link href={"/"}>
-            <Image
-              src={image.LogoVeepearl}
-              alt="logo-veepearl"
-              className="md:w-16 lg:w-20"
-            />
-          </Link>
           {/* search, bahasa, add to cart, wishlist, authentication */}
           <div className="flex items-center space-x-8 text-white">
             {/* search */}
