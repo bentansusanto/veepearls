@@ -1,5 +1,32 @@
 import { JewerlyType, ProductJewerly } from "@/types/ProductType";
 
+export const jewerlyTypeHome = [
+  {
+    name_type: "Necklare",
+    image: "type-necklare.jpg"
+  },
+  {
+    name_type: "Breklet",
+    image: "type-necklare.jpg"
+  },
+  {
+    name_type: "Ring",
+    image: "type-necklare.jpg"
+  },
+  {
+    name_type: "Earings",
+    image: "type-necklare.jpg"
+  },
+  {
+    name_type: "Brooch",
+    image: "type-necklare.jpg"
+  },
+  {
+    name_type: "Set of Jewelry",
+    image: "type-necklare.jpg"
+  },
+]
+
 export const jewerlyType:JewerlyType[] = [
   {
     name_type: "Necklare",

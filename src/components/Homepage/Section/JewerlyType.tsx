@@ -1,6 +1,6 @@
 import { Mobile } from "@/config/MediaQuery";
 // import image from '@/libs/ImageData/ImageData';
-import { jewerlyType } from "@/libs/ProductData/ProductData";
+import { jewerlyType, jewerlyTypeHome } from "@/libs/ProductData/ProductData";
 // import Link from 'next/link';
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
@@ -31,7 +31,7 @@ const JewerlyType = () => {
       <div className="w-[100%] bg-[#191919] px-5 py-10 text-white md:px-8 lg:p-32">
         <div className="space-y-4">
           <h1 className="text-2xl font-semibold font-heading lg:text-4xl">
-            Jewerly Type Veepearl
+            Jewelry Type Veepearl
           </h1>
           <p className="text-gray-400 lg:max-w-lg">
             From classic pearl necklaces to contemporary earrings, our range of
@@ -48,7 +48,7 @@ const JewerlyType = () => {
           className="absolute inset-0 flex transition-transform duration-700 ease-in-out"
           style={{ transform: `translateX(-${currentIndex * 100}%)` }}
         >
-          {jewerlyType.map((list, index) => (
+          {jewerlyTypeHome.map((list, index) => (
             <div key={index} className="relative flex-shrink-0 w-full h-full">
               <Image
                 src={require(`@/assets/images/${list.image}`)}
