@@ -189,7 +189,7 @@ const Navbar = () => {
             <div>
             <HoverCard.Root>
                 <HoverCard.Trigger>
-                  <p className="font-semibold cursor-pointer">Jewerly Type</p>
+                  <p className="font-semibold cursor-pointer">Jewelry Type</p>
                 </HoverCard.Trigger>
                 <HoverCard.Content size="1" className="p-5 shadow">
                   <ul className="space-y-3 text-black">
