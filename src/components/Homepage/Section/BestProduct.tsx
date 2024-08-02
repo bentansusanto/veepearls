@@ -33,7 +33,7 @@ const BestProduct = () => {
   ];
   // filter products
   const filteredProducts = selectType
-    ? productJewerly.filter((product) => product.name_type === selectType)
+    ? productJewerly.filter((product) => product.slug_type === selectType)
     : productJewerly;
 
   const handleAddToCart = () => {
@@ -91,8 +91,8 @@ const BestProduct = () => {
     setSelectProduct(idx);
     setOpenSelect(true);
   };
-  const handleSelectType = (name_type: string) => {
-    setSelectType(name_type);
+  const handleSelectType = (type: string) => {
+    setSelectType(type);
   };
 
   return (
@@ -113,9 +113,9 @@ const BestProduct = () => {
       <div className="flex flex-wrap gap-3 mt-10 md:justify-center md:gap-2">
         {jewerlyType.map((list, idx) => (
           <div
-            onClick={() => handleSelectType(list.name_type)}
+            onClick={() => handleSelectType(list.type)}
             key={idx}
-            className={` ${selectType === list.name_type ? "text-[#B2A671]" : "text-gray-400 transition-all duration-500"} cursor-pointer rounded-md px-6 py-3`}
+            className={` ${selectType === list.type ? "text-[#B2A671]" : "text-gray-400 transition-all duration-500"} cursor-pointer rounded-md px-6 py-3`}
           >
             <p className="font-heading text-[16px] font-semibold">
               {list.name_type}
