@@ -8,12 +8,24 @@ export const navData:NavProps[] = [
         link: "#",
         subMenu: [
             {
-                name_menu: "Blog",
-                link: "#"
+                name_menu: "Our Brand DNA",
+                link: "about-us/our-brand-dna"
+            },
+            {
+                name_menu: "Our Key Considerations",
+                link: "about-us/our-key-considerations"
+            },
+            {
+                name_menu: "Our Market & Customers",
+                link: "about-us/our-market-and-customers"
+            },
+            {
+                name_menu: "Our Founder & CEO",
+                link: "about-us/our-founder-and-ceo"
             },
             {
                 name_menu: "Contact Us",
-                link: "#"
+                link: "about-us/contact-us"
             },
         ]
     },
@@ -21,6 +33,10 @@ export const navData:NavProps[] = [
         pages: "Pearl Education",
         link: "#",
         subMenu: [
+            {
+                name_menu: "About Pearls",
+                link: "/pearl-education/necklare-length"
+            },
             {
                 name_menu: "Pearl Types",
                 link: "/pearl-education/pearl-types"
@@ -111,12 +127,24 @@ export const pearlEducationData:SubMenu[] = [
 
 export const aboutUsData:SubMenu[] = [
     {
-        name_menu: "Blog",
-        link: "#"
+        name_menu: "Our Brand DNA",
+        link: "about-us/our-brand-dna"
+    },
+    {
+        name_menu: "Our Key Considerations",
+        link: "about-us/our-key-considerations"
+    },
+    {
+        name_menu: "Our Market & Customers",
+        link: "about-us/our-market-and-customers"
+    },
+    {
+        name_menu: "Our Founder & CEO",
+        link: "about-us/our-founder-and-ceo"
     },
     {
         name_menu: "Contact Us",
-        link: "#"
+        link: "about-us/contact-us"
     },
 ]
 

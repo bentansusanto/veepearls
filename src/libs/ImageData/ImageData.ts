@@ -6,6 +6,7 @@ import BgTestimoniVeepearl from '@/assets/images/bg-testimoni-veepearl.png'
 import IconPearl from '@/assets/images/pearl-sea.svg'
 import QuotesTestimoni from '@/assets/images/quotes-veepearl.svg'
 import BgPearlColorPage from '@/assets/images/bg-pearl-color-page.jpg'
+import BgFounderCeoPage from '@/assets/images/bg-founder-page.jpg'
 
 const image = {
     LogoVeepearl,
@@ -15,7 +16,8 @@ const image = {
     BgTestimoniVeepearl,
     IconPearl,
     QuotesTestimoni,
-    BgPearlColorPage
+    BgPearlColorPage,
+    BgFounderCeoPage
 }
 
 export default image;
