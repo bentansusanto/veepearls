@@ -109,7 +109,6 @@ const JewelryProducts: React.FC<ProductProps> = ({ product, typeJewelry }) => {
             <Image
               src={require(`@/assets/images/${typeJewelry[0]?.image}`)}
               alt="image-type"
-              className=""
             />
           </div>
         </div>

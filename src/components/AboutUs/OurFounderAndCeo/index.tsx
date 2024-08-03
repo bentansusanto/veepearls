@@ -2,7 +2,6 @@
 import { Mobile } from '@/config/MediaQuery'
 import { foundePage } from '@/libs/AboutData/AboutData'
 import image from '@/libs/ImageData/ImageData'
-import { pearlColor } from '@/libs/PearlEductionData/PearlEducationData'
 import Image from 'next/image'
 import React from 'react'
 

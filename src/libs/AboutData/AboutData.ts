@@ -13,59 +13,68 @@ export const ourBrandDNA:OurBrandDNA = {
     heading: "Our Brand DNA",
     content1: {
         heading: "Who We Are",
+        image: "bg-brand-dna-page3.jpg",
         body: " A brand built for a new generation who want to embrace all the beauty we see in the world. Our founder & CEO is originally from Indonesia, building and being proud of our local products for more than 7 years and starting to attract Turkish and European market"
     },
     content2: {
         heading: "What We Do",
+        image: "bg-brand-dna-page4.jpg",
         body: "Bring the best of nature to you."
     },
     content3: {
         heading: "What we believe",
+        image: "bg-brand-dna-page5.jpg",
         body: "Pearls can be ethically and sustainably celebrated."
     },
-    image: ""
+    image: "bg-brand-dna-page2.jpg"
 }
 
 export const ourKeyConsiderate:OurKeyConsiderate = {
     heading: "Our Key Considerate",
     content1: {
         heading: "climate",
+        image: "bg-key-considerations-page3.jpg",
         body: " Indonesia provides extraordinary natural products, the focus of our products is genuine pearls from nature and created for the luxury of its users."
     },
     content2: {
         heading: "community",
+        image: "bg-key-considerations-page4.jpg",
         body: "Elegance and luxury are always for pride, create and customize according to beauty requests"
     },
     content3: {
         heading: "preservation",
+        image: "bg-key-considerations-page5.jpg",
         body: "Proudly using natural products is a form of timeless preservation"
     },
-    image: ""
+    image: "bg-key-considerations-page2.jpg",
 }
 
 export const ourMarketCustomer:OurMarketCustomers = {
     heading: "Our Market & Customer",
     content1: {
         heading: "retail",
+        image: "bg-market-customers-page2.jpg",
         body: "All our products are sold for the Asian, European and American markets. with existing designs or custom designs according to customer wishes"
     },
     content2: {
         heading: "wholesaler",
+        image: "bg-market-customers-page3.jpg",
         body: "We sell raw material products that we want to resell to reach end users and the pride of using pearls from our beloved country, Indonesia."
     },
     content3: {
         heading: "branches",
+        image: "bg-market-customers-page4.jpg",
         body: "To branches every country that exciting in our brand should have standard our business criteria.",
         contact: "More details email : branches@veepearls.com"
     },
-    image: ""
+    image: "bg-market-customers-page1.jpg",
 }
 
 export const contactUs = {
-    heading: "",
+    heading: "Contact Us",
+    image: "bg-contact-us-page1.jpg",
     contact: ["+90 536 582 9313", "+90 552 622 6877"],
-    email: "",
-    contact_email: "hello@veepearls.com",
-    website: "Website",
-    website_link:"www.veepearls.com"
+    email: "hello@veepearls.com",
+    website:"www.veepearls.com",
+    website_link: "https://veepearls.com"
 }
