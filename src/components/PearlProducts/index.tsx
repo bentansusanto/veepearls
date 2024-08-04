@@ -112,7 +112,7 @@ const JewelryProducts: React.FC<ProductProps> = ({ product, typeJewelry }) => {
             />
           </div>
         </div>
-        {product.length === 0 && <div className="w-full text-center text-white border border-red-500">Product not found</div>}
+        {product.length === 0 && <div className="w-full text-center text-white">Product not found</div>}
         <div className="grid w-full grid-cols-2 gap-x-5 gap-y-8 md:grid-cols-3 md:gap-5">
           {product.map((list, idx) => (
             <div key={idx} className="space-y-4">
