@@ -76,5 +76,5 @@ export const contactUs = {
     contact: ["+90 536 582 9313", "+90 552 622 6877"],
     email: "hello@veepearls.com",
     website:"www.veepearls.com",
-    website_link: "https://veepearls.com"
+    website_link: "https://veepearls.vercel.app"
 }

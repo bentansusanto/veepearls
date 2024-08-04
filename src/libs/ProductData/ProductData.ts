@@ -11,7 +11,7 @@ export const jewerlyTypeHome = [
   },
   {
     name_type: "Ring",
-    image: "type-necklare.jpg"
+    image: "type-ring.jpg"
   },
   {
     name_type: "Earings",
