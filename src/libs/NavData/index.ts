@@ -35,7 +35,7 @@ export const navData:NavProps[] = [
         subMenu: [
             {
                 name_menu: "About Pearls",
-                link: "/pearl-education/necklare-length"
+                link: "/pearl-education/about-pearls"
             },
             {
                 name_menu: "Pearl Types",
@@ -103,6 +103,10 @@ export const occationData:SubMenu[] = [
 ]
 
 export const pearlEducationData:SubMenu[] = [
+    {
+        name_menu: "About Pearls",
+        link: "/pearl-education/about-pearls"
+    },
     {
         name_menu: "Pearl Types",
         link: "/pearl-education/pearl-types"

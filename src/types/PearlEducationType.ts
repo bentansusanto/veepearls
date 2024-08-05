@@ -37,6 +37,11 @@ type NecklareProps = {
     image: string;
 }
 
+type PearlProps = {
+    heading: string;
+    body: string[];
+    image: string;
+}
 
 
 // type pearlType
@@ -59,4 +64,8 @@ export interface PearlGrading extends Contents{
 // type necklare length
 export interface NecklareLength extends Contents{
     necklareData: NecklareProps[]
+}
+
+export interface AboutPearls extends Contents{
+    content: PearlProps
 }

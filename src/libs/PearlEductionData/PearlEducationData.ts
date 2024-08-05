@@ -1,4 +1,4 @@
-import { NecklareLength, PearlColor, PearlType } from "@/types/PearlEducationType";
+import { AboutPearls, NecklareLength, PearlColor, PearlType } from "@/types/PearlEducationType";
 
 // data pearl type
 export const pearlTypes: PearlType = {
@@ -196,3 +196,19 @@ export const necklareLength:NecklareLength = {
         },
     ]
 };
+
+export const aboutPearl:AboutPearls = {
+    heading: "About Pearls",
+    content: {
+      heading: "What is Pearls",
+      body: [
+        "Pearls are a symbol of purity and innocence, and are believed to bring clarity and wisdom. This stone is said to help one find inner peace and increase self-acceptance.",
+        "Indonesia is recorded as the largest producer of South Sea pearl commodities in the world.",
+        "The process of forming pearls is very rare and takes a long time, making pearls a very valuable. In addition, pearls are also a symbol of beauty, luxury, and eternity, so many people consider pearls to be very special and valuable.",
+        "Pearls are generally white or ivory in color. But they can also be light pink, yellow, or even black.",
+        "Pearls contain more than 30 types of minerals such as magnesium and calcium that can maintain healthy skin. The protein contained in pearls can also increase collagen production, increase skin moisture and make it look brighter.",
+        "Pearls are more popular with a perfectly round shape, but the shape is not always round, there are other pearl shapes such as semi-round, drop, baroque, and circle baroque which are considered rarer and more unique."
+      ],
+      image: "bg-brand-dna-page2.jpg"
+    },
+}
