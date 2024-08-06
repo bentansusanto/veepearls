@@ -54,7 +54,7 @@ export const navData:NavProps[] = [
                 link: "/pearl-education/pearl-color"
             },
             {
-                name_menu: "Necklare Lengths",
+                name_menu: "Necklaces Lengths",
                 link: "/pearl-education/necklare-length"
             },
         ]
@@ -124,7 +124,7 @@ export const pearlEducationData:SubMenu[] = [
         link: "/pearl-education/pearl-color"
     },
     {
-        name_menu: "Necklare Lengths",
+        name_menu: "Necklaces Lengths",
         link: "/pearl-education/necklare-length"
     },
 ]

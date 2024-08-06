@@ -48,7 +48,7 @@ const Footer = () => {
                     </ul>
                     </div>
                     {/* Occasion */}
-                    <div className="space-y-5">
+                    {/* <div className="space-y-5">
                     <p className="text-lg font-bold">Customer Support</p>
                     <ul className="space-y-4">
                         {customerSupport.map((list, idx) => (
@@ -57,7 +57,7 @@ const Footer = () => {
                         </li>
                         ))}
                     </ul>
-                    </div>
+                    </div> */}
                 </div>
                 <footer className="mt-20 text-gray-400">
                     ©{date}, Veepearls | All Right Reserved

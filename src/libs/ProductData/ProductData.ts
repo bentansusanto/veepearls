@@ -2,7 +2,7 @@ import { JewerlyType, ProductJewerly } from "@/types/ProductType";
 
 export const jewerlyTypeHome = [
   {
-    name_type: "Necklare",
+    name_type: "Necklaces",
     image: "type-necklare.jpg"
   },
   {
@@ -29,9 +29,9 @@ export const jewerlyTypeHome = [
 
 export const jewerlyType:JewerlyType[] = [
   {
-    name_type: "Necklare",
+    name_type: "Necklaces",
     image: "pearls-katalog5.jpg",
-    type: "necklare",
+    type: "necklaces",
     description: "Unique in their ability to carry an outfit from day to night, a sophisticated necklace made from pearls is an elegant staple for any fine jewelry collection. For minimalist allure, a tincup style pairs perfectly with other silver or gold-toned pieces, while colored necklaces allow for making a beautifully bold statement.",
   },
   {
@@ -76,7 +76,7 @@ export const productJewerly: ProductJewerly[] = [
     price: 120,
     image: ["Rings/Ring01/ring01-1.jpeg", "Rings/Ring01/ring01-2.jpeg"],
 
-    video: "/Rings/Ring01/ring01-video.mp4",
+    video: "https://drive.google.com/file/d/15vWIs0JTuTtRdJITASXp7g4QTr68_cg7/view?usp=sharing",
     desc: "Ring - AA Quality With Titanium plated",
     detail_jewerly: {
       grading: "AA",
@@ -129,8 +129,8 @@ export const productJewerly: ProductJewerly[] = [
   // type necklare
   {
     name_product: "11-12mm White Freshwater Pearl Necklace - AA Quality",
-    name_type: "Necklare",
-    slug_type: "necklare",
+    name_type: "Necklaces",
+    slug_type: "necklaces",
     price: 96,
     image: [
       "Necklare/Necklare01/necklare01-1.jpeg",
@@ -147,8 +147,8 @@ export const productJewerly: ProductJewerly[] = [
   },
   {
     name_product: "12 White Freshwater Pearl Necklace - AA Quality",
-    name_type: "Necklare",
-    slug_type: "necklare",
+    name_type: "Necklaces",
+    slug_type: "necklaces",
     price: 96,
     image: [
       "Necklare/Necklare02/necklare02-1.jpeg",
@@ -164,8 +164,8 @@ export const productJewerly: ProductJewerly[] = [
   },
   {
     name_product: "5-9cm White Freshwater Pearl Necklace - AAA Quality",
-    name_type: "Necklare",
-    slug_type: "necklare",
+    name_type: "Necklaces",
+    slug_type: "necklaces",
     price: 96,
     image: [
       "Necklare/Necklare03/necklare03-1.jpeg",

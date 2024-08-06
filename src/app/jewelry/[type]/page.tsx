@@ -4,7 +4,7 @@ import JewelryProducts from "@/components/PearlProducts";
 import { jewerlyType, productJewerly } from "@/libs/ProductData/ProductData";
 import React from "react";
 
-const TypeJewerly = ({ params }: { params: { type: string } }) => {
+const TypeJewelry = ({ params }: { params: { type: string } }) => {
   const type = params.type;
   const products = productJewerly.filter(
     (product) => product.slug_type.toLowerCase() === type,
@@ -20,4 +20,4 @@ const TypeJewerly = ({ params }: { params: { type: string } }) => {
   )
 };
 
-export default TypeJewerly;
+export default TypeJewelry;

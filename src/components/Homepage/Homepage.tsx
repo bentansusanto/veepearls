@@ -7,15 +7,17 @@ import WhyChooseUs from './Section/WhyChooseUs'
 import OurStory from './Section/OurStory'
 import TestimoniSection from './Section/TestimoniSection'
 import CTASection from './Section/CTASection'
+import VideoSection from './Section/VideoSection'
 
 const Homepage = () => {
   return (
     <div>
       <HeroSection/>
       <JewerlyType/>
-      <BestProduct/>
+      {/* <BestProduct/> */}
       <WhyChooseUs/>
-      <OurStory/>
+      {/* <VideoSection/> */}
+      {/* <OurStory/> */}
       <TestimoniSection/>
       <CTASection/>
     </div>

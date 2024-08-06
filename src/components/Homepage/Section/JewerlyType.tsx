@@ -31,7 +31,7 @@ const JewerlyType = () => {
       <div className="w-[100%] bg-[#191919] px-5 py-10 text-white md:px-8 lg:p-32">
         <div className="space-y-4">
           <h1 className="text-2xl font-semibold font-heading lg:text-4xl">
-            Jewelry Type Veepearl
+            Veepearls Jewelry
           </h1>
           <p className="text-gray-400 lg:max-w-lg">
             From classic pearl necklaces to contemporary earrings, our range of

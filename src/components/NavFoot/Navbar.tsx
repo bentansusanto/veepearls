@@ -145,7 +145,7 @@ const Navbar = () => {
                   <ul className="mt-5 ml-5 space-y-5">
                   {
                     jewerlyType.map((list, idx) => (
-                      <li onClick={() => handleClick(list.name_type)} key={idx} className="text-gray-300 font-heading">
+                      <li onClick={() => handleClick(list.type)} key={idx} className="text-gray-300 font-heading">
                         <p>{list.name_type}</p>
                       </li>
                     ))
@@ -158,7 +158,7 @@ const Navbar = () => {
         </div>
       ) : (
         // Desktop & Tablet
-        <div className="flex items-center justify-between">
+        <div className="flex items-center justify-between z-40 relative">
          {/* logo */}
          <Link href={"/"}>
             <Image
