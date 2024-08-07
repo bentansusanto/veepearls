@@ -7,7 +7,7 @@ import React, { useEffect, useState } from "react";
 import "@/app/globals.css";
 import Image from "next/image";
 import image from "@/libs/ImageData/ImageData";
-import { FiSearch } from "react-icons/fi";
+import { FiChevronDown, FiSearch } from "react-icons/fi";
 import { IoBagOutline, IoClose } from "react-icons/io5";
 import { FaRegHeart } from "react-icons/fa6";
 import { HiOutlineMenu } from "react-icons/hi";
@@ -139,7 +139,10 @@ const Navbar = () => {
               ))}
               {/* jewelry type */}
               <div>
-                <p onClick={handleSubMenuTypes} className="font-semibold font-heading">Jewelry Type</p>
+                <div className="flex space-x-5">
+                  <Link href={'/jewelry'} className="font-semibold font-heading">Jewelry Type</Link>
+                  <FiChevronDown onClick={handleSubMenuTypes} className={`${openSubTypes&&"rotate-180"} transition-all duration-300 text-xl mt-1`}/>
+                </div>
                 {
                   openSubTypes && 
                   <ul className="mt-5 ml-5 space-y-5">

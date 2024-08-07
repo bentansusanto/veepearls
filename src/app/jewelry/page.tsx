@@ -1,8 +1,10 @@
+import Layouts from '@/components/Layout/Layouts'
+import ListProducts from '@/components/Products/ListProducts'
 import React from 'react'
 
 const PearlJewelry = () => {
   return (
-    <div>PearlJewelry</div>
+    <Layouts><ListProducts/></Layouts>
   )
 }
 
