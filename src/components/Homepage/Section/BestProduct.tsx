@@ -248,14 +248,16 @@ const BestProduct = () => {
                                     {detailProduct?.detail_jewerly.grading}
                                   </span>
                                 </p>
+                                <div className="flex items-center space-x-3">
                                 <p className="text-sm text-gray-500">
                                   Size:{" "}
-                                  <span className="space-x-2 font-semibold text-black">
+                                </p>
+                                  <span className="space-x-2 flex font-semibold text-black">
                                     {detailProduct?.detail_jewerly.size.map((list) => (
-                                      <p key={list}>, {list}</p>
+                                      <p key={list}>{list} ,</p>
                                     ))}
                                   </span>
-                                </p>
+                                </div>
                                 <p>{detailProduct?.desc}</p>
                               </div>
                               <AlertDialog.Description></AlertDialog.Description>
@@ -275,8 +277,8 @@ const BestProduct = () => {
                 </div>
               )}
             </div>
-            <div className="space-y-3 text-white">
-              <h2 className="font-semibold font-lato lg:text-lg">
+            <div className="space-y-3 text-gray-300">
+              <h2 className="font-semibold text-[#B2A671] font-lato lg:text-lg">
                 {list.name_product}
               </h2>
               {/* <div className="flex space-x-2">

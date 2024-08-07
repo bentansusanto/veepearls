@@ -42,7 +42,7 @@ const HeroSection = () => {
             <button
               className={`rounded-md border-2 border-[#B2A671] uppercase px-5 py-2.5 text-center font-lato font-semibold text-[#B2A671] transition-all duration-300 hover:bg-[#B2A671] hover:text-white`}
             >
-              <Link href={"#products"}>Shop Now</Link>
+              <Link href={'/jewelry'}>Shop Now</Link>
             </button>
           </div>
         </div>

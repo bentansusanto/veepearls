@@ -22,7 +22,7 @@ const CTASection = () => {
           <button
             className={`rounded-md border-2 uppercase border-[#B2A671] hover:bg-[#B2A671] px-5 py-2.5 text-center font-lato font-semibold hover:text-white text-[#B2A671] transition-all duration-300`}
           >
-            <Link href={"#products"}>Shop Now</Link>
+            <Link href={'/jewelry'}>Shop Now</Link>
           </button>
         </div>
       </div>
