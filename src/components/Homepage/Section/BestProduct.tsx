@@ -175,7 +175,7 @@ const BestProduct = () => {
                         <div className="flex flex-col gap-10 p-3 md:flex-row">
                           <div className="relative w-full py-40 overflow-hidden md:h-auto">
                             <div className="absolute inset-0 flex transition-transform duration-700 ease-in-out">
-                              <Carousel indicators={false}>
+                              <Carousel indicators={false} slide={false}>
                                 {detailProduct?.image.map((img, idx) => (
                                   <div
                                     key={idx}
@@ -277,7 +277,7 @@ const BestProduct = () => {
                 </div>
               )}
             </div>
-            <div className="space-y-3 text-gray-300">
+            <div className="space-y-3 text-gray-400">
               <h2 className="font-semibold text-[#B2A671] font-lato lg:text-lg">
                 {list.name_product}
               </h2>
@@ -285,7 +285,7 @@ const BestProduct = () => {
                 <FaStar className="text-xl text-[#B2A671]" />
                 <p className="text-gray-300">{list.rating}</p>
               </div> */}
-              <p className="text-xl font-bold">{dollar(list.price)}</p>
+              <p className="text-lg font-bold">{dollar(list.price)}</p>
             </div>
           </div>
         ))}

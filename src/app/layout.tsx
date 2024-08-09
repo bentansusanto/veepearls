@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import "@radix-ui/themes/styles.css";
 import { Theme } from "@radix-ui/themes";
+import PrelineScript from "@/config/PrelineScript";
 
 export const metadata: Metadata = {
   title: "Veepearls",
@@ -25,7 +26,8 @@ export default function RootLayout({
         />
       </head>
       <body>
-        <Theme style={{ background: "#212121" }}>
+        <Theme style={{ background: "#0D0D0D" }}>
+        <PrelineScript />
           <main className="font-lato">{children}</main>
         </Theme>
       </body>

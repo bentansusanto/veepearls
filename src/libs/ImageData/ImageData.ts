@@ -1,5 +1,6 @@
 import LogoVeepearl from '@/assets/images/logo-veepearl.png'
 import BgHeroSection from '@/assets/images/bg-herosection-veepearl.png'
+import BgHeroSectionMobile from '@/assets/images/bg-herosection-mobile-veepearl.png'
 import BgJewerlyType from '@/assets/images/bg-jewerlytypesection.png'
 import BgOurServices from '@/assets/images/bg-why-choose-veepearl.png'
 import BgTestimoniVeepearl from '@/assets/images/bg-testimoni-veepearl.png'
@@ -14,6 +15,7 @@ import BgContactUsPage from '@/assets/images/bg-contact-us-page.jpg'
 const image = {
     LogoVeepearl,
     BgHeroSection,
+    BgHeroSectionMobile,
     BgJewerlyType,
     BgOurServices,
     BgTestimoniVeepearl,

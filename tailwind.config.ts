@@ -3,8 +3,7 @@ import type { Config } from "tailwindcss"
 const config = {
   darkMode: ["class"],
   content: [
-    "./node_modules/flowbite-react/lib/**/*.js",
-    "./node_modules/flowbite/**/*.js",
+    './node_modules/preline/preline.js',
     './pages/**/*.{ts,tsx}',
     './components/**/*.{ts,tsx}',
     './app/**/*.{ts,tsx}',
@@ -19,7 +18,7 @@ const config = {
       }
     },
   },
-  plugins: [require('flowbite/plugin')],
+  plugins: [require('preline/plugin'),],
 } satisfies Config
 
 export default config

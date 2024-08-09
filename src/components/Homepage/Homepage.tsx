@@ -13,12 +13,11 @@ const Homepage = () => {
   return (
     <div>
       <HeroSection/>
-      <JewerlyType/>
-      {/* <BestProduct/> */}
       <WhyChooseUs/>
+      <JewerlyType/>
       {/* <VideoSection/> */}
       {/* <OurStory/> */}
-      <TestimoniSection/>
+      {/* <TestimoniSection/> */}
       <CTASection/>
     </div>
   )
