@@ -140,7 +140,7 @@ const Navbar = () => {
               {/* jewelry type */}
               <div>
                 <div className="flex space-x-5">
-                  <Link href={'/jewelry'} className="font-semibold font-heading">Jewelry Type</Link>
+                  <Link href={'/jewelry'} className="font-semibold font-heading">Jewellery Type</Link>
                   <FiChevronDown onClick={handleSubMenuTypes} className={`${openSubTypes&&"rotate-180"} transition-all duration-300 text-xl mt-1`}/>
                 </div>
                 {
