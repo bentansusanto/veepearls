@@ -209,6 +209,6 @@ export const aboutPearl:AboutPearls = {
         "Pearls contain more than 30 types of minerals such as magnesium and calcium that can maintain healthy skin. The protein contained in pearls can also increase collagen production, increase skin moisture and make it look brighter.",
         "Pearls are more popular with a perfectly round shape, but the shape is not always round, there are other pearl shapes such as semi-round, drop, baroque, and circle baroque which are considered rarer and more unique."
       ],
-      image: "bg-brand-dna-page2.jpg"
+      image: "bg-about-pearl1.jpg"
     },
 }

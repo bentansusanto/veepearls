@@ -11,7 +11,7 @@ const NecklareLengthPage = () => {
   );
 
   return (
-    <div className={`${isMobile ? "px-5" : "mt-40 md:px-8 lg:px-28"} `}>
+    <div className={`${isMobile ? "px-5 py-40 -mt-24" : "mt-40 md:px-8 lg:px-28"} bg-necklacelength `}>
       {/* Heading */}
       <div className="mx-auto space-y-2 text-center text-white">
         <h1

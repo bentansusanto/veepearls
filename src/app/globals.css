@@ -74,6 +74,34 @@ input, button, textarea{
   background-position: center center;
 }
 
+.bg-aboutpearl{
+  background: url("../assets/images/bg-about-pearl.jpg");
+  background-size: cover;
+  background-attachment:fixed ;
+  background-position: center center;
+}
+
+.bg-pearltypes{
+  background: url("../assets/images/bg-pearl-types.jpg");
+  background-size: cover;
+  background-attachment:fixed ;
+  background-position: center center;
+}
+
+.bg-pearlcolor{
+  background: url("../assets/images/bg-pearl-color.jpg");
+  background-size: cover;
+  background-attachment:fixed ;
+  background-position: center center;
+}
+
+.bg-necklacelength{
+  background: url("../assets/images/bg-necklace-length.jpg");
+  background-size: cover;
+  background-attachment:fixed ;
+  background-position: center center;
+}
+
 
 .bg-herosection {
   background: url("../assets/images/bg-herosection-veepearl.png");

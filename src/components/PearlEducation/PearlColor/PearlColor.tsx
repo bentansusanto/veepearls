@@ -19,9 +19,9 @@ const PearlColorPage = () => {
     setSelectColor(name_color);
   };
   return (
-    <div className={`${isMobile ? "mt-10" : "mt-20 md:px-8 lg:px-28"}`}>
+    <div className={`${isMobile ? "-mt-24 py-40 px-5" : "mt-20 md:px-8 lg:px-28"} bg-pearlcolor`}>
       {/* Heading */}
-      <div className={` ${isMobile && "bg-black py-20"} relative mx-auto`}>
+      <div className={` ${isMobile && ""} relative mx-auto`}>
         <Image
           src={image.BgPearlColorPage}
           alt="bg-pearl-color"
@@ -55,7 +55,7 @@ const PearlColorPage = () => {
         {filterColor?.map((list, idx) => (
           <div key={idx} className="flex flex-col items-start gap-10 lg:flex-row">
             <div className="space-y-2 text-white lg:max-w-xl">
-              <h2 className="text-3xl font-semibold font-heading">
+              <h2 className="text-2xl font-semibold font-heading">
                 {list.name_color}
               </h2>
               {list.description.map((desc: any) => (

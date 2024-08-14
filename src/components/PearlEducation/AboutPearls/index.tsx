@@ -8,9 +8,9 @@ import React from 'react'
 const AboutPearlsPage = () => {
     const {isMobile} = Mobile()
     return (
-      <div className={`${isMobile? "px-5 mt-20" : "mt-20 md:px-8 lg:px-28"}`}>
+      <div className={`${isMobile? "px-5 py-40 -mt-24" : "mt-20 md:px-8 lg:px-28"} bg-aboutpearl`}>
            {/* Heading */}
-        <div className={` ${isMobile && "bg-black py-20"} relative mx-auto`}>
+        {/* <div className={` ${isMobile && "bg-black py-20"} relative mx-auto`}>
           <Image
             src={image.BgOurBrandDnaPage}
             alt="bg-pearl-color"
@@ -24,9 +24,9 @@ const AboutPearlsPage = () => {
               {aboutPearl.heading}
             </h1>
           </div>
-        </div>
+        </div> */}
         {/* content detail */}
-        <div className='flex md:flex-row flex-col items-center gap-10 mt-20 lg:gap-20 xl:max-w-[90%]'>
+        <div className='flex md:flex-row flex-col items-center gap-10 lg:gap-20 xl:max-w-[90%]'>
         <div className="md:max-w-[50%]">
               <Image
                 src={require(`@/assets/images/${aboutPearl.content.image}`)}
@@ -38,8 +38,8 @@ const AboutPearlsPage = () => {
               {/* Sales & Custom */}
               <div className='mb-10 space-y-6'>
                 <div className='space-y-3'>
-                  <h2 className='text-4xl font-semibold capitalize font-heading'>{aboutPearl.content.heading}</h2>
-                  <div className='mt-5 text-gray-300'>
+                  <h2 className='text-3xl font-bold capitalize font-heading'>{aboutPearl.content.heading}</h2>
+                  <div className='mt-5 text-gray-400'>
                     {
                         aboutPearl.content.body.map((list) => (
                             <p key={list}>{list}</p>
