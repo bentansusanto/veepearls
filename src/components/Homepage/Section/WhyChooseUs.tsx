@@ -10,7 +10,7 @@ const WhyChooseUs = () => {
     <div className={`${isMobile? "px-5 mt-20 flex-col" : "lg:px-28 md:px-8 mt-40 flex-row justify-between"} flex items-center`}>
         <div className='md:mt-0 space-y-10 mt-10 xl:w-[40%] lg:w-[50%] md:w-[50%]'>
         <h1
-            className={`font-heading text-2xl font-bold text-white lg:text-4xl xl:text-4xl`}
+            className={`font-heading text-2xl font-semibold text-white lg:text-4xl xl:text-4xl`}
             style={{ lineHeight: "150%" }}
           >
             Why should you buy pearl jewellery at Veepearl?

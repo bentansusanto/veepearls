@@ -91,7 +91,7 @@ const Footer = () => {
                     <div className="grow hs-accordion-selectable hs-accordion-selected:bg-gray-100 dark:hs-accordion-selected:bg-neutral-700 px-1.5 rounded-md cursor-pointer">
                       <div className="flex items-center gap-x-3">
                         <div className="grow">
-                          <span className="font-heading text-xl capitalize text-white dark:text-neutral-200">
+                          <span className="font-heading text-lg capitalize text-white dark:text-neutral-200">
                             {list.pages}
                           </span>
                         </div>
@@ -186,7 +186,7 @@ const Footer = () => {
                   <div className="grow hs-accordion-selectable hs-accordion-selected:bg-gray-100 dark:hs-accordion-selected:bg-neutral-700 px-1.5 rounded-md cursor-pointer">
                     <div className="flex items-center gap-x-3">
                       <div className="grow">
-                        <Link href={'/jewelry'} className="font-heading text-xl capitalize text-white dark:text-neutral-200">
+                        <Link href={'/jewelry'} className="font-heading text-lg capitalize text-white dark:text-neutral-200">
                           Veepearl Jewellery
                         </Link>
                       </div>
