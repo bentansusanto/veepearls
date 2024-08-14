@@ -22,7 +22,7 @@ export const jewerlyTypeHome = [
     image: "type-brooch.jpg",
   },
   {
-    name_type: "Set of Jewelry",
+    name_type: "Set of Jewellery",
     image: "type-sets-of-jewelry.jpg",
   },
 ];
@@ -64,7 +64,7 @@ export const jewerlyType: JewerlyType[] = [
       "Hypnotic in its design, a pearl pendant has become synonymous with many of lifes milestone events. From graduations and weddings to birthdays, anniversaries or just to declare your love, pearls are a way of marking your emotions in a tangible manner. Wear and adore, before passing down for future generations to feel a part of something greater.",
   },
   {
-    name_type: "Set of Jewerly",
+    name_type: "Set of Jewellery",
     image: "pearls-katalog6.jpg",
     type: "sets",
     description:
