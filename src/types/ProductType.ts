@@ -1,6 +1,7 @@
 export type JewerlyType = {
     name_type: string;
     image: string;
+    video?: string;
     type: string;
     description: string;
 }

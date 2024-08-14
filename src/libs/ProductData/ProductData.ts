@@ -31,6 +31,7 @@ export const jewerlyType: JewerlyType[] = [
   {
     name_type: "Necklaces",
     image: "pearls-katalog5.jpg",
+    video: "jewellery-necklace.mp4",
     type: "necklaces",
     description:
       "Unique in their ability to carry an outfit from day to night, a sophisticated necklace made from pearls is an elegant staple for any fine jewelry collection. For minimalist allure, a tincup style pairs perfectly with other silver or gold-toned pieces, while colored necklaces allow for making a beautifully bold statement.",
@@ -38,6 +39,7 @@ export const jewerlyType: JewerlyType[] = [
   {
     name_type: "Bracelet",
     image: "pearls-katalog2.jpg",
+    video: "jewellery-bracelet.mp4",
     type: "bracelet",
     description:
       "Adorn your wrist with gems of the sea to make a noticeable statement. A symbol of classic beauty, pearl bracelets look divine alone or even layered for a more modern appeal. Choose a colored overtone to set your mood and an ornately crafted clasp for a look thats uniquely yours.",
@@ -45,6 +47,7 @@ export const jewerlyType: JewerlyType[] = [
   {
     name_type: "Ring",
     image: "pearls-katalog1.jpg",
+    video: "jewellery-ring.mp4",
     type: "ring",
     description:
       "Whether you’re drawn to a simple solitaire or extravagant cocktail, a pearl ring is an enchanting way to honor your commitment or accomplishments. Wear as an alternative to the traditional wedding or engagement ring, or gift to yourself as a precious reminder of your strength, success, and remarkable sense of style.",
@@ -52,6 +55,7 @@ export const jewerlyType: JewerlyType[] = [
   {
     name_type: "Earings",
     image: "pearls-katalog4.jpg",
+    video: "jewellery-earings.mp4",
     type: "earings",
     description:
       "A delicate display of feminine elegance, a pair of pearl earrings are a timeless marker of exquisite taste and attention to detail. Flattering across all complexions, a set can elevate both a date night and boardroom ensemble, leaving you feeling your most beautiful and put-together – whatever the occasion.",
@@ -59,6 +63,7 @@ export const jewerlyType: JewerlyType[] = [
   {
     name_type: "Brooch",
     image: "pearls-katalog3.jpg",
+    video: "jewellery-brooch.mp4",
     type: "brooch",
     description:
       "Hypnotic in its design, a pearl pendant has become synonymous with many of lifes milestone events. From graduations and weddings to birthdays, anniversaries or just to declare your love, pearls are a way of marking your emotions in a tangible manner. Wear and adore, before passing down for future generations to feel a part of something greater.",
@@ -66,6 +71,7 @@ export const jewerlyType: JewerlyType[] = [
   {
     name_type: "Set of Jewellery",
     image: "pearls-katalog6.jpg",
+    video: "jewellery-sets.mp4",
     type: "sets",
     description:
       "For accessories that seamlessly complement, a set of pearls is a finishing touch to any capsule wardrobe. The ability of a pearl necklace and matching earrings to elevate even the most basic of refined tailoring, while radiating polished sophistication, makes them an ideal gift for the style-conscious woman. Symbolic of wisdom and purity, our pearls look as timeless worn alone as they do together.",

@@ -18,7 +18,7 @@ interface ProductProps {
 const JewelryProducts: React.FC<ProductProps> = ({ product, typeJewelry }) => {
   const { isMobile } = Mobile();
   const [detailProduct, setDetailProduct] = useState<ProductJewerly | null>(
-    null,
+    null
   );
   const [quantity, setQuantity] = useState<number>(1);
   const [selectProduct, setSelectProduct] = useState({});
@@ -41,7 +41,7 @@ const JewelryProducts: React.FC<ProductProps> = ({ product, typeJewelry }) => {
     const cart = JSON.parse(localStorage.getItem("cart") || "[]");
     const existingItem = cart.find(
       (item: ProductJewerly) =>
-        item.name_product === detailProduct?.name_product,
+        item.name_product === detailProduct?.name_product
     );
     if (existingItem) {
       existingItem.quantity += quantity;
@@ -98,7 +98,13 @@ const JewelryProducts: React.FC<ProductProps> = ({ product, typeJewelry }) => {
   return (
     <div className={`${isMobile ? "mt-20 px-5" : "mt-40 md:px-8 lg:px-28"}`}>
       {/* deskripsi type */}
-      <div className="mx-auto space-y-4 text-center text-white">
+      <video
+        src={require(`@/assets/images/video-type/${typeJewelry[0]?.video}`)}
+        autoPlay
+        loop
+        className={` ${!isMobile&& "hidden"} w-auto`}
+      ></video>
+      <div className={` ${isMobile&& "hidden"} mx-auto space-y-4 text-center text-white`}>
         <h1 className="font-heading text-4xl font-semibold">
           {typeJewelry[0]?.name_type}
         </h1>
@@ -107,14 +113,29 @@ const JewelryProducts: React.FC<ProductProps> = ({ product, typeJewelry }) => {
         </p>
       </div>
       {/* products with image katalog */}
-      <div className="mt-20 flex flex-col gap-5 md:flex-row">
+      <div className="md:my-20 my-20 space-y-5 md:space-y-0 flex flex-col gap-5 md:flex-row">
         <div className="block lg:max-w-[35%]">
           <div className="top-0 md:sticky">
-            <Image
+            {/* <Image
               src={require(`@/assets/images/${typeJewelry[0]?.image}`)}
               alt="image-type"
               className="saturate-0 hover:saturate-100 brightness-70"
-            />
+            /> */} <video
+              src={require(`@/assets/images/video-type/${typeJewelry[0]?.video}`)}
+              autoPlay
+              muted
+              loop
+              className={`${isMobile&&"hidden"} w-auto`}
+            ></video>
+            <div className="mx-auto space-y-4 text-center text-white">
+              <h1 className="font-heading text-4xl font-semibold">
+                {typeJewelry[0]?.name_type}
+              </h1>
+              <p className="mx-auto text-[16px] text-gray-400 lg:max-w-3xl">
+                {typeJewelry[0]?.description}
+              </p>
+            </div>
+           
           </div>
         </div>
         {product.length === 0 && (
