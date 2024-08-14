@@ -26,7 +26,7 @@ const OurFounderCeoPage = () => {
           </h1>
 
           <div className="max-w-xl space-y-4 text-white">
-            <h2 className="text-2xl font-medium font-lato">
+            <h2 className="text-lg font-semibold font-lato">
               {foundePage.content.heading}
             </h2>
             <p className="leading-relaxed text-gray-300">

@@ -149,7 +149,7 @@ export const pearlGrading = {};
 
 // data necklare length
 export const necklareLength:NecklareLength = {
-    heading: "Necklare Lengths",
+    heading: "Necklace Lengths",
     body: "Veepearls has the largest collection of pearl necklaces on the Internet with pearls available in all shapes, sizes, colors, and qualities.",
     necklareData: [
         {
