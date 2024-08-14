@@ -15,7 +15,7 @@ const CTASection = () => {
             Get Our Pearl Jewellery Now. Limited Products
           </h1>
           <p className="text-gray-300 text-[16px]">
-            Shop now and embrace the timeless elegance that only pearls can
+            Shop now and embrace the timeless elegance <br /> that only pearls can
             offer.
           </p>
         </div>

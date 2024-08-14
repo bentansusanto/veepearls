@@ -105,18 +105,18 @@ const BestProduct = () => {
           Our Product
         </h1>
         <p className="text-gray-400">
-          To admire and celebrate the incredible beauty we find in nature
+          To admire and celebrate the incredible beauty <br /> we find in nature
         </p>
       </div>
       {/* Type Products */}
-      <div className="flex flex-wrap gap-3 mt-10 md:justify-center md:gap-2">
+      <div className="flex flex-wrap gap-2 items-center mt-10 md:justify-center md:gap-2">
         {jewerlyType.map((list, idx) => (
           <div
             onClick={() => handleSelectType(list.type)}
             key={idx}
             className={` ${selectType === list.type ? "text-[#B2A671]" : "text-gray-400 transition-all duration-500"} cursor-pointer rounded-md px-6 py-3`}
           >
-            <p className="font-heading text-[16px] font-semibold">
+            <p className="font-heading text-[18px] font-semibold">
               {list.name_type}
             </p>
           </div>

@@ -41,7 +41,7 @@ export const navData:NavProps[] = [
             },
             {
                 name_menu: "Pearl Grading",
-                link: "/pearl-education/pearl-grading"
+                link: "#"
             },
             {
                 name_menu: "Pearl Sizing",

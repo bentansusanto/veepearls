@@ -46,6 +46,33 @@ input, button, textarea{
   background-position: center center;
 }
 
+.bg-anniversaries{
+  background: url("../assets/images/bg-anniversaries.jpg");
+  background-size: cover;
+  background-attachment:fixed ;
+  background-position: center center;
+}
+
+.bg-birthday{
+  background: url("../assets/images/bg-birthday.jpg");
+  background-size: cover;
+  background-attachment:fixed ;
+  background-position: center center;
+}
+
+.bg-holiday{
+  background: url("../assets/images/bg-holiday.jpg");
+  background-size: cover;
+  background-attachment:fixed ;
+  background-position: center center;
+}
+
+.bg-wedding{
+  background: url("../assets/images/bg-wedding.jpg");
+  background-size: cover;
+  background-attachment:fixed ;
+  background-position: center center;
+}
 
 
 .bg-herosection {

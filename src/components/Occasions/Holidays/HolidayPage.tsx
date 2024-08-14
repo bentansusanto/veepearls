@@ -9,7 +9,7 @@ const HolidayPage = () => {
   const { isMobile } = Mobile();
 
   return (
-    <div className={`${isMobile ? "mt-10 px-5" : "mt-20 md:px-8 lg:px-28"}`}>
+    <div className={`${isMobile ? "-mt-24 py-40 px-5" : "mt-20 md:px-8 lg:px-28"} bg-holiday`}>
       <div className="mx-auto space-y-8 md:max-w-2xl lg:max-w-3xl xl:max-w-5xl">
         {/* Link */}
         <div className="flex space-x-3 text-white">
@@ -26,18 +26,18 @@ const HolidayPage = () => {
         <div className="space-y-8 text-white">
           <Image
             src={require(`@/assets/images/${holidaysData.image}`)}
-            alt={holidaysData.image}
+            alt="holiday image"
           />
           {/* Head */}
           <div className="space-y-4 md:max-w-xl lg:max-w-2xl xl:max-w-3xl">
-            <h1 className="text-3xl font-bold">{holidaysData.heading}</h1>
+            <h1 className="text-xl font-bold">{holidaysData.heading}</h1>
             <p className="text-gray-400">{holidaysData.body}</p>
           </div>
           {/* Details */}
           <div className="space-y-10 md:max-w-md lg:max-w-lg xl:max-w-2xl">
             {holidaysData.steps.map((list, idx) => (
               <div key={idx} className="space-y-4">
-                <h2 className="text-xl font-bold">{list.name_steps}</h2>
+                <h2 className="text-[16px] font-bold">{list.name_steps}</h2>
                 {list.image !== undefined && (
                   <Image
                     src={require(`@/assets/images/${list.image}`)}

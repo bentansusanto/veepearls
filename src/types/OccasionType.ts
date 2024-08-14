@@ -1,7 +1,7 @@
 type Occasions = {
     heading: string;
     body: string;
-    image: string;
+    image?: string;
 }
 
 type Detail = {
@@ -12,7 +12,7 @@ type Detail = {
 
 type OcationSteps = {
     name_steps: string;
-    image: string;
+    image?: string;
     description: string[]
 }
 

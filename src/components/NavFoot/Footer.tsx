@@ -32,7 +32,7 @@ const Footer = () => {
 
   return (
     <div
-      className={`${isMobile ? "mt-20 px-5 flex-col" : "mt-40 flex-row"} flex`}
+      className={`${isMobile ? "mt-10 px-5 flex-col" : "mt-40 flex-row"} flex`}
     >
       {/* Menu Occasion, Pearl Education, AboutUs, Customer Support */}
       {isMobile ? (
