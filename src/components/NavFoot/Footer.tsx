@@ -13,14 +13,23 @@ import Image from "next/image";
 import { useState } from "react";
 import { jewerlyType } from "@/libs/ProductData/ProductData";
 import image from "@/libs/ImageData/ImageData";
+import { useRouter } from "next/navigation";
 
 const Footer = () => {
   const { isMobile } = Mobile();
   const date = new Date().getFullYear();
   const [selectMenu, setSelectMenu] = useState({});
+  const [openMenu, setOpenMenu] = useState(false)
+  const router = useRouter()
   const handleSelectMenu = (pages: string) => {
     setSelectMenu(pages);
+    setOpenMenu(!openMenu)
   };
+  const handleClick = (type: string) => {
+    console.log("Success pindah page jewerly type")
+    router.push(`/jewelry/${type}`);
+  };
+
   return (
     <div
       className={`${isMobile ? "mt-20 px-5 flex-col" : "mt-40 flex-row"} flex`}
@@ -54,6 +63,7 @@ const Footer = () => {
                 >
                   <div className="hs-accordion-heading py-0.5 flex flex-row-reverse items-center gap-x-0.5 w-full">
                     <button
+                    onClick={() => handleSelectMenu(list.pages)}
                       className="hs-accordion-toggle size-6 flex justify-center items-center  rounded-md focus:outline-none  disabled:opacity-50 disabled:pointer-events-none "
                       aria-expanded="true"
                       aria-controls="hs-basic-tree-collapse-one"
@@ -72,7 +82,7 @@ const Footer = () => {
                       >
                         <path d="M5 12h14"></path>
                         <path
-                          className="hs-accordion-active:hidden block"
+                          className={` ${openMenu&&selectMenu === list.pages ? "hs-accordion-active:hidden" : " block"}`}
                           d="M12 5v14"
                         ></path>
                       </svg>
@@ -88,43 +98,44 @@ const Footer = () => {
                       </div>
                     </div>
                   </div>
-
-                  <div
-                    id="hs-basic-tree-collapse-one"
-                    className="hs-accordion-content w-full mt-3 overflow-hidden transition-[height] duration-300"
-                    role="group"
-                    aria-labelledby="hs-basic-tree-heading-one"
-                  >
+                   
                     <div
-                      className="hs-accordion-group ps-7"
+                      id="hs-basic-tree-collapse-one"
+                      className={`${openMenu && selectMenu === list.pages ? " hs-accordion-content" : "h-0"} w-full mt-3 overflow-hidden transition-[height] duration-300`}
                       role="group"
-                      data-hs-accordion-always-open=""
+                      aria-labelledby="hs-basic-tree-heading-one"
                     >
+                      
                       <div
-                        className="hs-accordion active space-y-4 mt-4"
-                        role="treeitem"
-                        aria-expanded="true"
-                        id="hs-basic-tree-sub-heading-one"
-                      >
-                        {list.subMenu.map((menu, idx) => (
-                          <div
-                            key={idx}
-                            className="hs-accordion-heading py-0.5 flex items-center gap-x-0.5 w-full"
-                          >
-                            <div className="grow hs-accordion-selectable hs-accordion-selected:bg-gray-100 dark:hs-accordion-selected:bg-neutral-700 px-1.5 rounded-md cursor-pointer">
-                              <div className="flex items-center gap-x-3">
-                                <div className="grow">
-                                  <span className="text-lg font-heading hover:text-white text-gray-400">
-                                    {menu.name_menu}
-                                  </span>
+                        className="hs-accordion-group ps-7"
+                        role="group"
+                        data-hs-accordion-always-open=""
+                      >             
+                        <div
+                          className="hs-accordion active space-y-4 mt-4"
+                          role="treeitem"
+                          aria-expanded="true"
+                          id="hs-basic-tree-sub-heading-one"
+                        > 
+                          {list.subMenu.map((menu, idx) => (
+                            <div
+                              key={idx}
+                              className="hs-accordion-heading py-0.5 flex items-center gap-x-0.5 w-full"
+                            >
+                              <div className="grow hs-accordion-selectable hs-accordion-selected:bg-gray-100 dark:hs-accordion-selected:bg-neutral-700 px-1.5 rounded-md cursor-pointer">
+                                <div className="flex items-center gap-x-3">
+                                  <div className="grow">
+                                    <Link href={menu.link} className="text-lg font-heading hover:text-white text-gray-400">
+                                      {menu.name_menu}
+                                    </Link>
+                                  </div>
                                 </div>
                               </div>
                             </div>
-                          </div>
-                        ))}
+                          ))}
+                        </div>
                       </div>
                     </div>
-                  </div>
                 </div>
               </div>
             </div>
@@ -175,9 +186,9 @@ const Footer = () => {
                   <div className="grow hs-accordion-selectable hs-accordion-selected:bg-gray-100 dark:hs-accordion-selected:bg-neutral-700 px-1.5 rounded-md cursor-pointer">
                     <div className="flex items-center gap-x-3">
                       <div className="grow">
-                        <span className="font-heading text-xl capitalize text-white dark:text-neutral-200">
-                          Veepearl Jewelry
-                        </span>
+                        <Link href={'/jewelry'} className="font-heading text-xl capitalize text-white dark:text-neutral-200">
+                          Veepearl Jewellery
+                        </Link>
                       </div>
                     </div>
                   </div>
@@ -208,7 +219,7 @@ const Footer = () => {
                           <div className="grow hs-accordion-selectable hs-accordion-selected:bg-gray-100 dark:hs-accordion-selected:bg-neutral-700 px-1.5 rounded-md cursor-pointer">
                             <div className="flex items-center gap-x-3">
                               <div className="grow">
-                                <span className="text-lg font-heading hover:text-white text-gray-400">
+                                <span onClick={() => handleClick(list.type)} className="text-lg font-heading hover:text-white text-gray-400">
                                   {list.name_type}
                                 </span>
                               </div>

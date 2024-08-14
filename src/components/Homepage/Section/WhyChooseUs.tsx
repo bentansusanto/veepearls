@@ -13,7 +13,7 @@ const WhyChooseUs = () => {
             className={`font-heading text-2xl font-bold text-white lg:text-4xl xl:text-4xl`}
             style={{ lineHeight: "150%" }}
           >
-            Why should you buy pearl jewelry at Veepearl?
+            Why should you buy pearl jewellery at Veepearl?
           </h1>
           {/* list veepearl's services */}
           <div className='grid grid-cols-2 md:grid-cols-2 gap-8'>

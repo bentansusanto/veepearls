@@ -245,14 +245,14 @@ const JewelryProducts: React.FC<ProductProps> = ({ product, typeJewelry }) => {
                                       {detailProduct?.detail_jewerly.grading}
                                     </span>
                                   </p>
-                                  <div className="flex space-x-2 text-sm text-gray-500">
+                                  {/* <div className="flex space-x-2 text-sm text-gray-500">
                                     <p>Size:</p>
                                     <span className="flex space-x-2 font-semibold text-black">
                                       {detailProduct?.detail_jewerly.size.map(
                                         (list) => <p key={list}>{list},</p>,
                                       )}
                                     </span>
-                                  </div>
+                                  </div> */}
                                   <p>{detailProduct?.desc}</p>
                                 </div>
                                 <AlertDialog.Description></AlertDialog.Description>
@@ -272,7 +272,7 @@ const JewelryProducts: React.FC<ProductProps> = ({ product, typeJewelry }) => {
                   </div>
                 )}
               </div>
-              <div className="space-y-3 text-gray-300">
+              <div className="space-y-3 text-gray-400">
                 <h2 className="font-lato font-semibold lg:text-lg">
                   {list.name_product}
                 </h2>

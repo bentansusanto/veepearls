@@ -248,7 +248,7 @@ const BestProduct = () => {
                                     {detailProduct?.detail_jewerly.grading}
                                   </span>
                                 </p>
-                                <div className="flex items-center space-x-3">
+                                {/* <div className="flex items-center space-x-3">
                                 <p className="text-sm text-gray-500">
                                   Size:{" "}
                                 </p>
@@ -257,7 +257,7 @@ const BestProduct = () => {
                                       <p key={list}>{list} ,</p>
                                     ))}
                                   </span>
-                                </div>
+                                </div> */}
                                 <p>{detailProduct?.desc}</p>
                               </div>
                               <AlertDialog.Description></AlertDialog.Description>

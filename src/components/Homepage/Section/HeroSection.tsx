@@ -26,7 +26,7 @@ const HeroSection = () => {
           <div className="mx-auto lg:w-[50%] xl:w-[40%]">
             <div className="space-y-3 text-center text-white">
               <h1
-                className={`font-heading text-4xl text-white font-bold lg:text-5xl xl:text-6xl`}
+                className={`font-heading text-3xl text-white font-bold lg:text-5xl xl:text-6xl`}
                 style={{ lineHeight: "130%" }}
               >
                 Enchanted Jewel

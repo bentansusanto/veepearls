@@ -12,7 +12,7 @@ const CTASection = () => {
             className={`font-heading text-3xl font-semibold lg:text-4xl xl:text-4xl`}
             style={{ lineHeight: "150%" }}
           >
-            Get Our Pearl Jewelry Now. Limited Products
+            Get Our Pearl Jewellery Now. Limited Products
           </h1>
           <p className="text-gray-300 text-[16px]">
           Shop now and embrace the timeless elegance that only pearls can offer.
