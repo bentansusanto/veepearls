@@ -278,7 +278,7 @@ const BestProduct = () => {
               )}
             </div>
             <div className="space-y-3 text-gray-400">
-              <h2 className="font-semibold text-[#B2A671] font-lato lg:text-lg">
+              <h2 className="font-semibold font-lato lg:text-lg">
                 {list.name_product}
               </h2>
               {/* <div className="flex space-x-2">

@@ -37,11 +37,13 @@ const HeroSection = () => {
             </div>
 
             <div className="mt-8 text-center">
+              <Link href={"/jewelry"}>
               <button
                 className={`border-2 border-white capitalize px-5 py-2.5 text-center font-lato font-medium text-black transition-all duration-300 bg-[#FDFDFF]`}
               >
-                <Link href={"/jewelry"}>Shop Now</Link>
+                Shop Now
               </button>
+                </Link>
             </div>
           </div>
         </div>

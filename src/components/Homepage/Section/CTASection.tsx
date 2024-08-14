@@ -15,16 +15,19 @@ const CTASection = () => {
             Get Our Pearl Jewellery Now. Limited Products
           </h1>
           <p className="text-gray-300 text-[16px]">
-          Shop now and embrace the timeless elegance that only pearls can offer.
+            Shop now and embrace the timeless elegance that only pearls can
+            offer.
           </p>
         </div>
         <div className="mt-10 text-center">
+          <Link href={"/jewelry"}>
             <button
               className={`border-2 border-white capitalize px-5 py-2.5 text-center font-lato font-medium text-black transition-all duration-300 bg-[#FDFDFF]`}
             >
-              <Link href={'/jewelry'}>Shop Now</Link>
+              Shop Now
             </button>
-          </div>
+          </Link>
+        </div>
       </div>
     </div>
   );

@@ -113,6 +113,7 @@ const JewelryProducts: React.FC<ProductProps> = ({ product, typeJewelry }) => {
             <Image
               src={require(`@/assets/images/${typeJewelry[0]?.image}`)}
               alt="image-type"
+              className="saturate-0 hover:saturate-100 brightness-70"
             />
           </div>
         </div>
