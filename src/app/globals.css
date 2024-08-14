@@ -11,6 +11,41 @@ input, button, textarea{
   outline: none;
 }
 
+.bg-brand-dna{
+  background: url("../assets/images/bg-brand-dna-page.jpg");
+  background-size: cover;
+  background-attachment:fixed ;
+  background-position: center center;
+}
+
+.bg-key-considerate{
+  background: url("../assets/images/bg-key-considerations-page.jpg");
+  background-size: cover;
+  background-attachment:fixed ;
+  background-position: center center;
+}
+
+.bg-market-customers{
+  background: url("../assets/images/bg-market-customers-page.jpg");
+  background-size: cover;
+  background-attachment:fixed ;
+  background-position: center center;
+}
+
+.bg-contact-us{
+  background: url("../assets/images/bg-contact-us-page.jpg");
+  background-size: cover;
+  background-attachment:fixed ;
+  background-position: center center;
+}
+
+.bg-founder{
+  background: url("../assets/images/bg-founder-page.jpg");
+  background-size: cover;
+  background-attachment:fixed ;
+  background-position: center center;
+}
+
 
 
 .bg-herosection {

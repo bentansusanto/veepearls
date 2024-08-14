@@ -26,7 +26,7 @@ const HeroSection = () => {
           <div className="mx-auto lg:w-[50%] xl:w-[40%]">
             <div className="space-y-3 text-center text-white">
               <h1
-                className={`font-heading text-[28px] text-white font-semibold lg:text-5xl xl:text-6xl`}
+                className={`font-heading text-[24px] text-[#eeebe3] font-semibold lg:text-5xl xl:text-6xl`}
                 style={{ lineHeight: "130%" }}
               >
                 Enchanted Jewel
@@ -36,10 +36,10 @@ const HeroSection = () => {
               </p>
             </div>
 
-            <div className="mt-8 text-center">
+            <div className="mt-5 text-center">
               <Link href={"/jewelry"}>
               <button
-                className={`border-2 border-white capitalize px-5 py-2 font-medium text-center text-sm font-lato text-black transition-all duration-300 bg-[#FDFDFF]`}
+                className={`border-2 border-white capitalize px-5 py-2 font-semibold text-center text-sm font-lato text-black transition-all duration-300 bg-[#FDFDFF]`}
               >
                 Shop Now
               </button>
