@@ -16,7 +16,7 @@ const config = {
     extend: {
       fontFamily: {
         'lato': ['Lato'],
-        'heading': ['Playfair Display']
+        'heading': ['Cormorant Garamond']
       }
     },
   },
