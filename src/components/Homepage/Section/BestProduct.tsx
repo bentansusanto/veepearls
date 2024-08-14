@@ -102,7 +102,7 @@ const BestProduct = () => {
     >
       <div className="mx-auto space-y-3 text-center text-white md:w-[50%] xl:w-[35%]">
         <h1 className="text-4xl font-semibold font-heading">
-          Our Products
+          Our Product
         </h1>
         <p className="text-gray-300">
           To admire and celebrate the incredible beauty we find in nature
