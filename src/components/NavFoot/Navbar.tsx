@@ -23,7 +23,7 @@ const Navbar = () => {
   const [cartCount, setCartCount] = useState<number>(0);
   const [openSubMenu, setOpenSubMenu] = useState<boolean>(false);
   const [openSubTypes, setOpenSubTypes] = useState<boolean>(false);
-  const router = useRouter();
+  const router = useRouter()
 
   useEffect(() => {
     const updateCartCount = () => {
@@ -49,19 +49,21 @@ const Navbar = () => {
   };
 
   const handleSubMenuTypes = () => {
-    setOpenSubTypes(!openSubTypes);
-  };
+    setOpenSubTypes(!openSubTypes)
+  }
+  
 
   const handleClick = (type: string) => {
-    console.log("Success pindah page jewerly type");
+    console.log("Success pindah page jewerly type")
     router.push(`/jewelry/${type}`);
   };
+
 
   return (
     <div className={` ${!isMobile && "py-4 md:px-8 lg:px-40"}`}>
       {isMobile ? (
         // Mobile
-        <div className="relative z-40">
+        <div className={`relative z-40 ${open && "bg-[#202020]"} transition-all duration-300`}>
           <div className="flex items-center justify-between px-5 py-3">
             <Link href={"/"}>
               <Image
@@ -90,88 +92,72 @@ const Navbar = () => {
                 <FaRegHeart className="text-xl" />
               </div>
               {/* toggle menu open and close */}
-              <button onClick={handleOpenNavMenu}>
-                <HiOutlineMenu className="text-2xl" />
+              <button
+                className={` ${open && "rotate-180"} transition-all duration-300`}
+              >
+                {open ? (
+                  <IoClose onClick={() => setOpen(false)} className="text-xl" />
+                ) : (
+                  <HiOutlineMenu
+                    onClick={handleOpenNavMenu}
+                    className="text-2xl"
+                  />
+                )}
               </button>
             </div>
           </div>
           <div
-            className={`${open ? "h-screen" : "opacity-0 h-0"} fixed w-screen z-0 bg-[#080808c7] bottom-0 transition-all duration-500`}
+            className={`${open ? "top-20" : "-top-52 opacity-10"} absolute h-auto w-screen bg-[#202020] p-5 text-white shadow-md shadow-gray-800 z-40 transition-all duration-500`}
           >
-            <div
-              className={`${open ? "h-auto top-0" : "opacity-0 bottom-0"} fixed  w-screen bg-[#202020] px-5 pb-10 pt-4 text-white shadow-md z-40 transition-all duration-500`}
-            >
-              <div className="flex items-center justify-between mb-10">
-                <Image src={image.LogoVeepearl} alt="logo-veepearl" className="w-16"/>
-                <IoClose onClick={() => setOpen(false)} className="text-xl" />
-              </div>
-
-              {/* Menu */}
-              <div className="space-y-5">
-                {navData.map((list, idx) => (
-                  <div key={idx}>
-                    <div
-                      onClick={() => handleSelectMenu(list.pages)}
-                      className="flex items-center justify-between"
+            {/* Menu */}
+            <div className="space-y-5">
+              {navData.map((list, idx) => (
+                <div key={idx}>
+                  <div onClick={() => handleSelectMenu(list.pages)} className="flex items-center justify-between">
+                    <p
+                      className={`font-heading text-[18px] font-semibold cursor-pointer`}
+                      
                     >
-                      <p
-                        className={`font-heading text-[18px] font-semibold cursor-pointer`}
-                      >
-                        {list.pages}
-                      </p>
-                      <FiChevronDown
-                        className={`${openSubMenu && selectMenu === list.pages && "rotate-180"} transition-all duration-300 text-xl mt-1`}
-                      />
-                    </div>
-                    {openSubMenu && selectMenu === list.pages && (
-                      <ul className="mt-5 ml-3 space-y-5">
-                        {list.subMenu.map((data, idx) => (
-                          <li
-                            key={idx}
-                            className={`font-heading text-gray-300 text-[18px] hover:text-[#D99D01]`}
+                      {list.pages}
+                    </p>
+                    <FiChevronDown  className={`${openSubMenu&&selectMenu === list.pages&&"rotate-180"} transition-all duration-300 text-xl mt-1`}/>
+                  </div>
+                  {openSubMenu && selectMenu === list.pages && (
+                    <ul className="mt-5 ml-3 space-y-5">
+                      {list.subMenu.map((data, idx) => (
+                        <li key={idx} className={`font-heading text-gray-300 text-[18px] hover:text-[#D99D01]`}>
+                          <Link
+                            href={data.link}
+                            onClick={() => {
+                              return setOpen(false), setOpenSubMenu(false);
+                            }}
                           >
-                            <Link
-                              href={data.link}
-                              onClick={() => {
-                                return setOpen(false), setOpenSubMenu(false);
-                              }}
-                            >
-                              {data.name_menu}
-                            </Link>
-                          </li>
-                        ))}
-                      </ul>
-                    )}
-                  </div>
-                ))}
-                {/* jewelry type */}
-                <div>
-                  <div className="flex justify-between">
-                    <Link
-                      href={"/jewelry"}
-                      className="font-semibold font-heading text-[18px]"
-                    >
-                      Jewellery Type
-                    </Link>
-                    <FiChevronDown
-                      onClick={handleSubMenuTypes}
-                      className={`${openSubTypes && "rotate-180"} transition-all duration-300 text-lg mt-2`}
-                    />
-                  </div>
-                  {openSubTypes && (
-                    <ul className="mt-5 ml-5 space-y-5">
-                      {jewerlyType.map((list, idx) => (
-                        <li
-                          onClick={() => handleClick(list.type)}
-                          key={idx}
-                          className="text-gray-300 hover:text-[#D99D01] text-[18px] font-heading cursor-pointer"
-                        >
-                          <p>{list.name_type}</p>
+                            {data.name_menu}
+                          </Link>
                         </li>
                       ))}
                     </ul>
                   )}
                 </div>
+              ))}
+              {/* jewelry type */}
+              <div>
+                <div className="flex justify-between">
+                  <Link href={'/jewelry'} className="font-semibold font-heading text-[18px]">Jewellery Type</Link>
+                  <FiChevronDown onClick={handleSubMenuTypes} className={`${openSubTypes&&"rotate-180"} transition-all duration-300 text-lg mt-2`}/>
+                </div>
+                {
+                  openSubTypes && 
+                  <ul className="mt-5 ml-5 space-y-5">
+                  {
+                    jewerlyType.map((list, idx) => (
+                      <li onClick={() => handleClick(list.type)} key={idx} className="text-gray-300 hover:text-[#D99D01] text-[18px] font-heading cursor-pointer">
+                        <p>{list.name_type}</p>
+                      </li>
+                    ))
+                  }
+                  </ul>
+                }
               </div>
             </div>
           </div>
@@ -179,8 +165,8 @@ const Navbar = () => {
       ) : (
         // Desktop & Tablet
         <div className="flex items-center justify-between z-40 relative">
-          {/* logo */}
-          <Link href={"/"}>
+         {/* logo */}
+         <Link href={"/"}>
             <Image
               src={image.LogoVeepearl}
               alt="logo-veepearl"
@@ -207,18 +193,14 @@ const Navbar = () => {
             ))}
             {/* jewerly type */}
             <div>
-              <HoverCard.Root>
+            <HoverCard.Root>
                 <HoverCard.Trigger>
                   <p className="font-semibold cursor-pointer">Jewelry Type</p>
                 </HoverCard.Trigger>
                 <HoverCard.Content size="1" className="p-5 shadow">
                   <ul className="space-y-3 text-black">
                     {jewerlyType.map((data, idx) => (
-                      <li
-                        onClick={() => handleClick(data.type)}
-                        key={idx}
-                        className={`list-none font-lato cursor-pointer`}
-                      >
+                      <li onClick={() => handleClick(data.type)} key={idx} className={`list-none font-lato cursor-pointer`}>
                         <p className="">{data.name_type}</p>
                       </li>
                     ))}
