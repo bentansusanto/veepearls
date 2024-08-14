@@ -104,7 +104,7 @@ const BestProduct = () => {
         <h1 className="text-4xl font-semibold font-heading">
           Our Product
         </h1>
-        <p className="text-gray-300">
+        <p className="text-gray-400">
           To admire and celebrate the incredible beauty we find in nature
         </p>
       </div>
